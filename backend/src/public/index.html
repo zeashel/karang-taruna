@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shop</title>
+</head>
+
+<style>
+    html {
+        color-scheme: dark;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+</style>
+
+<body>
+    <h1>Produk</h1>
+    <ul id="list"></ul>
+
+    <script>
+        fetch("/api/products")
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById("list");
+                data.forEach(p => {
+                    const li = document.createElement("li");
+                    li.textContent = p.name + " - Rp. " + p.price;
+                    list.appendChild(li);
+                });
+            });
+    </script>
+</body>
+
+</html>

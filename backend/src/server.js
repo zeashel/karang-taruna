@@ -11,5 +11,7 @@ app.get("/api/products", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server started at http://localhost:${port}`);
+    console.log(`server started at http://localhost:${port}`);
 });
+
+app.use(express.static("src/public"));
