@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import ProductCard from "./components/ProductCard";
+
+import "./scss/product-grid.scss";
 
 function App() {
     const [products, setProducts] = useState([]);
@@ -36,16 +39,14 @@ function App() {
         <div className="container py-4">
             <h1 className="mb-4">Daftar Produk</h1>
 
-            <div className="row">
+            <div className="product-grid">
                 {products.map((p) => (
-                    <div key={p.id} className="col-12 col-md-6 col-lg-4">
-                        <ProductCard
-                            name={p.name}
-                            price={p.price}
-                            desc={p.desc}
-                            img={p.img}
-                        />
-                    </div>
+                    <ProductCard
+                        name={p.name}
+                        price={p.price}
+                        desc={p.desc}
+                        img={p.img}
+                    />
                 ))}
             </div>
         </div>
