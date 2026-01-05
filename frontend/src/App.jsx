@@ -33,18 +33,21 @@ function App() {
     }, []);
 
     return (
-        <div>
-            <h1>Daftar Produk</h1>
+        <div className="container py-4">
+            <h1 className="mb-4">Daftar Produk</h1>
 
-            {products.map((p) => (
-                <ProductCard
-                    key={p.id}
-                    name={p.name}
-                    price={p.price}
-                    desc={p.desc}
-                    img={p.img}
-                />
-            ))}
+            <div className="row">
+                {products.map((p) => (
+                    <div key={p.id} className="col-12 col-md-6 col-lg-4">
+                        <ProductCard
+                            name={p.name}
+                            price={p.price}
+                            desc={p.desc}
+                            img={p.img}
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
