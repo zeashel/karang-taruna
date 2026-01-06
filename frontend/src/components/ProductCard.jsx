@@ -1,5 +1,3 @@
-import React from "react";
-
 function ProductCard({ name, price, desc, img }) {
     return (
         <div className="card h-100">
