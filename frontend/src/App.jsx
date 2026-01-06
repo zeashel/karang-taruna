@@ -2,13 +2,12 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import Navbar from "./components/Navbar";
 
 function App() {
     return (
         <div>
-            <nav style={{ marginBottom: 20 }}>
-                <Link to="/">Home</Link> | <Link to="/products">Products</Link>
-            </nav>
+            <Navbar />
 
             <Routes>
                 <Route path="/" element={<Home />} />
