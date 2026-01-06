@@ -5,6 +5,14 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg bg-body-secondary bg-opacity-10 shadow mb-3 fixed-top">
             <div className="container-fluid">
                 <NavLink className="navbar-brand fw-bold" to="/">
+                    <img
+                        style={{
+                            marginInlineEnd: "5px",
+                            marginBottom: "3px",
+                        }}
+                        src="img/logo.svg"
+                        alt="Logo"
+                    />
                     Online Shop
                 </NavLink>
 
