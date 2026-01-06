@@ -14,6 +14,7 @@ function Products() {
                 price: 200000,
                 desc: "Sepatu premium berbahan kulit",
                 img: "https://placehold.net/default.svg",
+                discount: null,
             },
             {
                 id: 2,
@@ -21,6 +22,7 @@ function Products() {
                 price: 160000,
                 desc: "Tas pesta berbahan kulit",
                 img: "https://placehold.net/default.svg",
+                discount: 50,
             },
             {
                 id: 3,
@@ -28,6 +30,7 @@ function Products() {
                 price: 200000,
                 desc: "Jaket kulit premium berwarna hitam",
                 img: "https://placehold.net/default.svg",
+                discount: 20,
             },
         ];
         setProducts(data);
@@ -44,6 +47,7 @@ function Products() {
                         price={p.price}
                         desc={p.desc}
                         img={p.img}
+                        discount={p.discount}
                     />
                 ))}
             </div>
