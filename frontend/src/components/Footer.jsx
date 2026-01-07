@@ -2,7 +2,7 @@ function Footer() {
     return (
         <footer className="text-center py-3 px-3 px-lg-5 mb-3">
             <hr className="py-1 mx-5" />
-            <p className="mb-1">
+            <p className="mb-0">
                 Tugas Zahra A. S.
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +62,9 @@ function Footer() {
                         <path d="m14.5 4-5 16" />
                     </svg>
                 </a>
+            </p>
+            <p className="text-muted text-smallest lh-sm mt-0">
+                <small>© Zahra A. S. 2026. All rights reserved.</small>
             </p>
             <p className="text-muted text-smallest lh-sm">
                 <small>
