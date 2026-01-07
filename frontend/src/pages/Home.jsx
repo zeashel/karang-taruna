@@ -13,7 +13,7 @@ export default function Home() {
             </p>
             <Carousel />
             <Link
-                className="btn btn-primary btn-lg hover-btn my-2"
+                className="btn btn-primary btn-lg hover-btn mb-3"
                 to="/products"
             >
                 Browse Inventory

@@ -2,7 +2,7 @@ function Carousel() {
     return (
         <div
             id="carousel"
-            className="carousel slide p-0 mx-3 mx-lg-5 my-3"
+            className="carousel slide p-0 mx-3 mx-lg-5 my-5"
             data-bs-ride="carousel"
         >
             <div className="carousel-indicators">
