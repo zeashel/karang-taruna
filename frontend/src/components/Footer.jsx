@@ -1,8 +1,8 @@
 function Footer() {
     return (
-        <footer className="text-center my-5">
+        <footer className="text-center my-5 py-3 px-3 px-lg-5">
             <hr className="py-1 mx-5" />
-            <p>
+            <p className=" mb-1">
                 Tugas Zahra A. S.
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +54,13 @@ function Footer() {
                         <path d="m14.5 4-5 16" />
                     </svg>
                 </a>
+            </p>
+            <p>
+                <small className="text-muted text-smallest">
+                    Recompiled is a fictional brand created for demonstration
+                    purposes only. All products, pricing, and content shown on
+                    this site are not real and are used as placeholders.
+                </small>
             </p>
         </footer>
     );
