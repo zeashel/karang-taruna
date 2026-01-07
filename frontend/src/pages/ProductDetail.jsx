@@ -4,7 +4,7 @@ function ProductDetail() {
     const { id } = useParams();
 
     return (
-        <div>
+        <div className="container py-4">
             <h1>Detail Produk</h1>
             <p>ID Produk: {id}</p>
         </div>
