@@ -1,6 +1,6 @@
 function Carousel() {
     return (
-        <div id="carousel" className="carousel slide p-0 m-3 m-lg-5">
+        <div id="carousel" className="carousel slide p-0 mx-3 mx-lg-5 my-3">
             <div className="carousel-indicators">
                 <button
                     type="button"
