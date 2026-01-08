@@ -11,12 +11,20 @@ export default function Home() {
                 Retro technology, carefully{" "}
                 <span className=" text-body">recompiled</span> for today.
             </p>
-            <Link
-                className="btn btn-primary btn-lg hover-btn mb-3"
-                to="/products"
-            >
-                Browse Inventory
-            </Link>
+            <div className="btn-home-parent d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2 mb-3 w-100">
+                <Link
+                    className="btn-home btn btn-primary btn-lg hover-btn"
+                    to="/products"
+                >
+                    Browse Inventory
+                </Link>
+                <button
+                    className="btn-home btn btn-outline-primary btn-lg hover-btn"
+                    to="/products"
+                >
+                    Create Account
+                </button>
+            </div>
             <Carousel />
         </div>
     );
