@@ -10,7 +10,7 @@ export default function ProductDetail() {
         getProductById(id).then((data) => setProduct(data));
     }, [id]);
 
-    if (!product) return <p>Loading...</p>;
+    if (!product) return <p className="display-5 text-center">Loading...</p>;
 
     return (
         <div className="container py-4">
