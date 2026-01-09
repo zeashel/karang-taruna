@@ -1,111 +1,86 @@
 const express = require("express");
+const connectDB = require("./db"); // connect to Mongodb database
+
 const app = express();
 const port = 8000;
 
 app.use(express.json()); // for POST/PUT
 
-// temp data, use mongodb later
-let products = [
-    {
-        id: 1,
-        name: "Sepatu",
-        price: 200000,
-        desc: "Sepatu premium berbahan kulit",
-        img: "https://placehold.net/default.svg",
-        discount: null,
-    },
-    {
-        id: 2,
-        name: "Tas",
-        price: 160000,
-        desc: "Tas pesta berbahan kulit",
-        img: "https://placehold.net/default.svg",
-        discount: 50,
-    },
-    {
-        id: 3,
-        name: "Jaket",
-        price: 200000,
-        desc: "Jaket kulit premium berwarna hitam",
-        img: "https://placehold.net/default.svg",
-        discount: 20,
-    }
-]
+// MongoDB
+connectDB();
 
-
+const Product = require("./models/Product.js"); // use Product model schema
 
 // RESTful API with CRUD
 
 // CREATE
 // POST new product
 
-app.post("/api/products", (req, res) => {
-    const newProduct = {
-        id: products.length ? products[products.length - 1].id + 1 : 1,
-        name: req.body.name,
-        price: req.body.price,
-        desc: req.body.desc,
-        img: req.body.img,
-        discount: req.body.discount,
-    };
-
-    products.push(newProduct);
-    res.status(201).json(newProduct);
+app.post("/api/products", async (req, res) => {
+    try {
+        const product = new Product(req.body);
+        const savedProduct = await product.save();
+        res.status(201).json(savedProduct);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 });
 
 // READ
 
-// endpoint getProducts (fetches all products)
-app.get("/api/products", (req, res) => {
+// endpoint getProducts (get all products)
+app.get("/api/products", async (req, res) => {
+    const products = await Product.find();
     res.json(products);
 });
 
-// endpoint getProductsById (fetches 1 product by their id)
-app.get("/api/products/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const product = products.find((p) => p.id === id);
-
-    if (!product) {
-        return res.status(404).json({ message: "Product not found" });
+// endpoint getProductsById (get 1 product by their id)
+app.get("/api/products/:id", async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+        res.json(product);
+    } catch {
+        res.status(400).json({ message: "Invalid ID" });
     }
-
-    res.json(product);
 });
 
 // UPDATE
 
-app.put("/api/products/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const index = products.findIndex((p) => p.id === id);
+app.put("/api/products/:id", async (req, res) => {
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
 
-    if (index === -1) {
-        return res.status(404).json({ message: "Product not found" });
+        if (!updatedProduct) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        res.json(updatedProduct);
+    } catch {
+        res.status(400).json({ message: "Invalid ID" });
     }
-
-    products[index] = {
-        ...products[index],
-        name: req.body.name ?? products[index].name,
-        price: req.body.price ?? products[index].price,
-        desc: req.body.desc ?? products[index].desc,
-        img: req.body.img ?? products[index].img,
-        discount: req.body.discount ?? products[index].discount,
-    };
-
-    res.json(products[index]);
 });
 
 // DELETE
 
-app.delete("/api/products/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const index = products.findIndex((p) => p.id === id);
+app.delete("/api/products/:id", async (req, res) => {
+    try {
+        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
 
-    if (index === -1) {
-        return res.status(404).json({ message: "Product not found" });
+        if (!deletedProduct) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        res.json({ message: "Product deleted" });
+    } catch {
+        res.status(400).json({ message: "Invalid ID" });
     }
-
-    products.splice(index, 1);
-    res.json({ message: "Product deleted" });
 });
 
 
