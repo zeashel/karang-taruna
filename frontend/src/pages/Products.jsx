@@ -21,8 +21,8 @@ function Products() {
             <div className="product-grid">
                 {products.map((p) => (
                     <ProductCard
-                        key={p.id} // react only prop
-                        id={p.id}
+                        key={p._id} // react only prop
+                        id={p._id}
                         name={p.name}
                         price={p.price}
                         desc={p.desc}
