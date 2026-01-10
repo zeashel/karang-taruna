@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="text-center py-3 px-3 px-lg-5 mb-3">
+        <footer className="text-center pb-3 px-3 px-lg-5 mb-3">
             <hr className="py-1 mx-5" />
             <p className="mb-0">
                 Tugas Zahra A. S.
