@@ -28,7 +28,7 @@ export default function ProductDetail() {
                     ).toLocaleString("id-ID")}{" "}
                 </h2>
                 <p>
-                    <small class="alert alert-primary p-1">
+                    <small className="alert alert-primary p-1">
                         {product.discount}% OFF
                     </small>{" "}
                     <span className="text-muted opacity-50 text-decoration-line-through">
