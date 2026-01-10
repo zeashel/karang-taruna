@@ -4,6 +4,7 @@ import { resolveImageUrl } from "../utils/resolveImageUrl";
 
 function ProductCard({ id, name, price, desc, img, discount }) {
     let priceElem = null;
+    const priceStr = price.toLocaleString("id-ID");
 
     if (discount !== null && discount !== undefined) {
         priceElem = (
@@ -15,15 +16,15 @@ function ProductCard({ id, name, price, desc, img, discount }) {
                     {discount}% OFF
                 </span>
                 <p className="card-text text-primary mb-1">
-                    Rp{price * (1 - discount / 100)}{" "}
+                    Rp{(price * (1 - discount / 100)).toLocaleString("id-ID")}{" "}
                     <small className="text-muted opacity-50 text-decoration-line-through">
-                        Rp{price}
+                        Rp{priceStr}
                     </small>
                 </p>
             </>
         );
     } else {
-        priceElem = <p className="card-text mb-1">Rp{price}</p>;
+        priceElem = <p className="card-text mb-1">Rp{priceStr}</p>;
     }
 
     return (

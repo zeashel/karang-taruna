@@ -14,25 +14,31 @@ export default function ProductDetail() {
 
     if (!product) return <p className="display-5 text-center">Loading...</p>;
 
+    const priceStr = product.price.toLocaleString("id-ID");
+
     const priceElem =
         // if discounted
         product.discount !== null && product.discount !== undefined ? (
             <>
                 <h2 className="text-primary">
-                    Rp{product.price * (1 - product.discount / 100)}{" "}
+                    Rp
+                    {(
+                        product.price *
+                        (1 - product.discount / 100)
+                    ).toLocaleString("id-ID")}{" "}
                 </h2>
                 <p>
                     <small class="alert alert-primary p-1">
                         {product.discount}% OFF
                     </small>{" "}
                     <span className="text-muted opacity-50 text-decoration-line-through">
-                        Rp{product.price}
+                        Rp{priceStr}
                     </span>
                 </p>
             </>
         ) : (
             // if no discount
-            <h2>Rp{product.price}</h2>
+            <h2>Rp{priceStr}</h2>
         );
 
     return (
