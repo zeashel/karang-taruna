@@ -1,13 +1,17 @@
 const mongoose = require("mongoose");
+const Product = require("./models/Product");
+const productSeed = require("./data/productSeed");
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/productdb");
-        console.log("MongoDB connected");
-    } catch (error) {
-        console.error("MongoDB connection failed", error);
-        process.exit(1);
+async function connectDB() {
+    await mongoose.connect("mongodb://127.0.0.1:27017/online_shop");
+    console.log("MongoDB connected");
+
+    const count = await Product.countDocuments();
+
+    if (count === 0) {
+        await Product.insertMany(productSeed);
+        console.log("Seed data inserted");
     }
-};
+}
 
 module.exports = connectDB;

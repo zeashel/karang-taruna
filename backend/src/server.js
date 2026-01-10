@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const Product = require("./models/Product");
 
 const app = express();
@@ -8,10 +7,8 @@ const port = 8000;
 app.use(express.json()); // for POST/PUT
 
 // MongoDB
-mongoose
-    .connect("mongodb://127.0.0.1:27017/online_shop")
-    .then(() => console.log("MongoDB connected"))
-    .catch((err) => console.error(err));
+const connectDB = require("./db");
+connectDB().catch(console.error);
 
 
 
