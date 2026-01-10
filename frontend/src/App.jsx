@@ -34,7 +34,7 @@ function App() {
     return (
         <>
             <Navbar />
-            <div className="container py-4">
+            <div className="container py-lg-4 py-2">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route
