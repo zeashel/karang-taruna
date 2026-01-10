@@ -87,7 +87,8 @@ app.delete("/api/products/:id", async (req, res) => {
     }
 });
 
-
+// expose images
+app.use("/img", express.static("./public/img"));
 
 app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
