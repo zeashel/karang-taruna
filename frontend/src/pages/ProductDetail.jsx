@@ -18,24 +18,21 @@ export default function ProductDetail() {
         // if discounted
         product.discount !== null && product.discount !== undefined ? (
             <>
-                <h2>
-                    <strong>Price: </strong>
-                    <span className="text-primary mb-1">
-                        Rp{product.price * (1 - product.discount / 100)}{" "}
-                    </span>
-                    <small className="text-muted opacity-50 text-decoration-line-through">
-                        Rp{product.price}
-                    </small>
-                    <span class="badge alert-primary" role="alert">
-                        {product.discount}% OFF
-                    </span>
+                <h2 className="text-primary">
+                    Rp{product.price * (1 - product.discount / 100)}{" "}
                 </h2>
+                <p>
+                    <small class="alert alert-primary p-1">
+                        {product.discount}% OFF
+                    </small>{" "}
+                    <span className="text-muted opacity-50 text-decoration-line-through">
+                        Rp{product.price}
+                    </span>
+                </p>
             </>
         ) : (
             // if no discount
-            <h2>
-                <strong>Price: </strong> Rp{product.price}
-            </h2>
+            <h2>Rp{product.price}</h2>
         );
 
     return (
@@ -98,14 +95,13 @@ export default function ProductDetail() {
                     </div>
                 </div>
                 <div className="col-md-8">
-                    <h4>{product.name}</h4>
+                    <h3 className="mb-0">{product.name}</h3>
                     <p className="text-muted mb-3">{product.desc}</p>
                     {priceElem}
                     <hr />
                     <h4>Description</h4>
                     <p>{product.long_desc}</p>
-                    <hr />
-                    <h4>Details</h4>
+                    <h4 className="mt-3">Details</h4>
                     <p>{product.details}</p>
                 </div>
             </div>
