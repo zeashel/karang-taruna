@@ -1,10 +1,17 @@
 const express = require("express");
-const Product = require("./models/Product");
-
 const app = express();
 const port = 8000;
 
 app.use(express.json()); // for POST/PUT
+
+const cors = require("cors");
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+    })
+);
+
+const Product = require("./models/Product");
 
 // MongoDB
 const connectDB = require("./db");
