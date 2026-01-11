@@ -3,7 +3,7 @@ const Product = require("./models/Product");
 const productSeed = require("./data/productSeed");
 
 async function connectDB() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/online_shop");
+    await mongoose.connect("mongodb://127.0.0.1:27017/e-commerce-recompiled");
     console.log("MongoDB connected");
 
     const count = await Product.countDocuments();
