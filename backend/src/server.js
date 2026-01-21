@@ -104,6 +104,12 @@ app.delete("/api/products/:id", async (req, res) => {
 
 
 
+// import authentication router module
+const authRoutes = require("./routes/auth");
+app.use("/api/auth", authRoutes);
+
+
+
 // expose images
 app.use("/img", express.static("./public/img"));
 
