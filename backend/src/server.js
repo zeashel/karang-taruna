@@ -17,6 +17,9 @@ const Product = require("./models/Product");
 const connectDB = require("./db");
 connectDB().catch(console.error);
 
+// env
+require("dotenv").config();
+
 
 
 /**
