@@ -1,7 +1,7 @@
 import { API_URL } from "../config";
 
 export async function login(username, password) {
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -20,4 +20,17 @@ export async function login(username, password) {
     localStorage.setItem("token", data.token);
 
     return data;
+}
+
+export async function register(username, password) {
+    const res = await fetch(`${API_URL}/api/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+    });
+
+    console.log("STATUS:", res.status);
+
+    const text = await res.text();
+    console.log("RAW RESPONSE:", text);
 }
