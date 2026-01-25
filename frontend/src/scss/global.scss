@@ -1,3 +1,20 @@
+$highlight: rgba(var(--bs-primary-rgb), 0.75);
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* user highlight selection */
+::selection {
+    background-color: $highlight;
+    color: var(--bs-emphasis-color);
+}
+/* for firefox */
+::-moz-selection {
+    background-color: $highlight; 
+    color: var(--bs-emphasis-color);
+}
+
 .hover-btn {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
