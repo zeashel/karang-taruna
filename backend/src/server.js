@@ -20,8 +20,9 @@ connectDB().catch(console.error);
 // env
 require("dotenv").config();
 
-// authentication middleware
+// authentication middleware (all users + admin specific)
 const authMiddleware = require("./middleware/authMiddleware");
+const adminMiddleware = require("./middleware/adminMiddleware.js")
 
 
 
@@ -39,15 +40,19 @@ const authMiddleware = require("./middleware/authMiddleware");
 // CREATE (AUTH)
 // create/post new 1 product
 
-app.post("/api/products", authMiddleware, async (req, res) => {
-    try {
-        const product = new Product(req.body);
-        const savedProduct = await product.save();
-        res.status(201).json(savedProduct);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-});
+app.post(
+    "/api/products",
+    authMiddleware,
+    adminMiddleware,
+    async (req, res) => {
+        try {
+            const product = new Product(req.body);
+            const savedProduct = await product.save();
+            res.status(201).json(savedProduct);
+        } catch (error) {
+            res.status(400).json({ message: error.message });
+        }
+    });
 
 // READ (NO AUTH NEEDED)
 
@@ -70,43 +75,50 @@ app.get("/api/products/:id", async (req, res) => {
     }
 });
 
-// UPDATE (AUTH)
+// UPDATE (ADMIN AUTH)
 // put/update 1 product by their id
 
-app.put("/api/products/:id", authMiddleware, async (req, res) => {
-    try {
-        const updatedProduct = await Product.findByIdAndUpdate(
-            req.params.id,
-            req.body,
-            { new: true }
-        );
+app.put(
+    "/api/products/:id",
+    authMiddleware,
+    adminMiddleware,
+    async (req, res) => {
+        try {
+            const updatedProduct = await Product.findByIdAndUpdate(
+                req.params.id,
+                req.body,
+                { new: true }
+            );
 
-        if (!updatedProduct) {
-            return res.status(404).json({ message: "Product not found" });
+            if (!updatedProduct) {
+                return res.status(404).json({ message: "Product not found" });
+            }
+
+            res.json(updatedProduct);
+        } catch {
+            res.status(400).json({ message: "Invalid ID" });
         }
-
-        res.json(updatedProduct);
-    } catch {
-        res.status(400).json({ message: "Invalid ID" });
-    }
-});
+    });
 
 // DELETE (AUTH)
 // delete 1 product by their id
 
-app.delete("/api/products/:id", authMiddleware, async (req, res) => {
-    try {
-        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+app.delete("/api/products/:id",
+    authMiddleware,
+    adminMiddleware,
+    async (req, res) => {
+        try {
+            const deletedProduct = await Product.findByIdAndDelete(req.params.id);
 
-        if (!deletedProduct) {
-            return res.status(404).json({ message: "Product not found" });
+            if (!deletedProduct) {
+                return res.status(404).json({ message: "Product not found" });
+            }
+
+            res.json({ message: "Product deleted" });
+        } catch {
+            res.status(400).json({ message: "Invalid ID" });
         }
-
-        res.json({ message: "Product deleted" });
-    } catch {
-        res.status(400).json({ message: "Invalid ID" });
-    }
-});
+    });
 
 
 
