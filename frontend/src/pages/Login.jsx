@@ -21,14 +21,20 @@ export default function Login() {
             localStorage.setItem("token", data.token);
             navigate("/products");
         } catch (err) {
-            setError("Email or password incorrect");
+            const msg =
+                err?.response?.data?.message || "Email or password incorrect";
+            setError(msg);
         }
     };
 
     return (
         <div className="d-flex justify-content-center align-items-center h-100 my-5">
             <div className="container" style={{ maxWidth: 450 }}>
-                {error && <div className="alert alert-danger">{error}</div>}
+                {error && (
+                    <div className="position-fixed top-0 start-50 translate-middle-x mt-5 z-100">
+                        <div className="alert alert-danger mt-4">{error}</div>
+                    </div>
+                )}
                 <h1 className="mb-3">Login</h1>
 
                 <form onSubmit={handleSubmit} style={{ marginBottom: 0 }}>
