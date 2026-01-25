@@ -4,10 +4,26 @@ import BackButton from "../components/BackButton";
 import { getProductById } from "../services/productService";
 import { addToCart } from "../services/cartService";
 import { resolveImageUrl } from "../utils/resolveImageUrl";
+import Alert from "../components/Alert";
 
 export default function ProductDetail() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const [alertMessage, setAlertMessage] = useState("");
+
+    function addToCartAlert() {
+        setAlertMessage(`${product.name} added to cart.`);
+    }
+
+    function addToCartButton() {
+        addToCart({
+            productId: product._id,
+            name: product.name,
+            price: product.price,
+            img: product.img,
+        });
+        addToCartAlert();
+    }
 
     useEffect(() => {
         getProductById(id).then((data) => setProduct(data));
@@ -44,7 +60,15 @@ export default function ProductDetail() {
 
     return (
         <div>
+            <Alert
+                message={alertMessage}
+                type="success   "
+                duration={3000}
+                onClose={() => setAlertMessage("")}
+            />
+
             <BackButton />
+
             <div className="row">
                 <div className="col-md-4">
                     <img
@@ -54,14 +78,8 @@ export default function ProductDetail() {
                     <div className="d-flex gap-2 my-3 w-100">
                         <button
                             className="btn btn-primary btn-lg hover-btn"
-                            onClick={() =>
-                                addToCart({
-                                    productId: product._id,
-                                    name: product.name,
-                                    price: product.price,
-                                    img: product.img,
-                                })
-                            }
+                            onClick={() => addToCartButton()}
+                            title="Add to Cart"
                         >
                             Add to Cart
                         </button>
