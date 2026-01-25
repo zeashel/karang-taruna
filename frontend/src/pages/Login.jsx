@@ -25,7 +25,7 @@ export default function Login() {
             await login(username, password);
             navigate("/products");
         } catch (err) {
-            setError(err.message);
+            setError(err.message || "Login failed");
         } finally {
             setLoading(false);
         }
@@ -35,7 +35,9 @@ export default function Login() {
         <div className="container py-5">
             <div className="row justify-content-center">
                 <div className="col-md-5">
-                    <h1 className="mb-4 text-center">Login</h1>
+                    <h1 className="mb-4 text-center display-3 fw-normal">
+                        Login
+                    </h1>
 
                     {error && (
                         <div className="position-fixed top-0 start-50 translate-middle-x mt-5 z-100">
