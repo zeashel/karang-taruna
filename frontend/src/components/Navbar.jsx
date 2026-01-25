@@ -56,7 +56,6 @@ function Navbar() {
                                 Home
                             </NavLink>
                         </li>
-
                         <li className="nav-item">
                             <NavLink
                                 to="/products"
@@ -68,6 +67,22 @@ function Navbar() {
                             </NavLink>
                         </li>
                     </ul>
+
+                    {/* Right-aligned buttons */}
+                    <div className="d-flex ms-auto">
+                        <NavLink
+                            to="/login"
+                            className="btn btn-outline-primary me-2"
+                        >
+                            Login
+                        </NavLink>
+                        <NavLink
+                            to="/register"
+                            className="btn btn-outline-primary"
+                        >
+                            Register
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </nav>
