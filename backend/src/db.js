@@ -3,6 +3,7 @@ const Product = require("./models/Product");
 const productSeed = require("./data/productSeed");
 
 async function connectDB() {
+    mongoose.set("autoIndex", true);
     await mongoose.connect("mongodb://127.0.0.1:27017/e-commerce-recompiled");
     console.log("MongoDB connected");
 
