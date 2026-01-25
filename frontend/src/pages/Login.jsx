@@ -5,7 +5,7 @@ import { login } from "../services/authService";
 export default function Login() {
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ export default function Login() {
         setLoading(true);
 
         try {
-            await login(email, password);
+            await login(username, password);
             navigate("/products");
         } catch (err) {
             setError(err.message);
@@ -47,12 +47,12 @@ export default function Login() {
 
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
-                            <label className="form-label">Email</label>
+                            <label className="form-label">Username</label>
                             <input
-                                type="email"
+                                type="text"
                                 className="form-control"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
                         </div>
