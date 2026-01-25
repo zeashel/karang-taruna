@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../services/authService";
+import Alert from "../components/Alert";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -9,12 +10,6 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        if (!error) return;
-        const id = setTimeout(() => setError(""), 5000); // 5 seconds
-        return () => clearTimeout(id);
-    }, [error]);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -57,13 +52,11 @@ export default function Login() {
                         Welcome Back
                     </h1>
 
-                    {error && (
-                        <div className="position-fixed top-0 start-50 translate-middle-x mt-5 z-100">
-                            <div className="alert alert-danger mt-4">
-                                {error}
-                            </div>
-                        </div>
-                    )}
+                    <Alert
+                        message={error}
+                        type="danger"
+                        onClose={() => setError("")}
+                    />
 
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
