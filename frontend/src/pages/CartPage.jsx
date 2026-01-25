@@ -17,7 +17,7 @@ export default function CartPage() {
     );
 
     return (
-        <div>
+        <div className="px-lg-5 mx-lg-5 px-1">
             <h1 className="mb-4">My Cart</h1>
 
             {cart.length === 0 ? (
@@ -38,12 +38,12 @@ export default function CartPage() {
                             key={item.productId}
                             className="card mb-3 shadow-sm"
                         >
-                            <div className="card-body d-flex align-items-center justify-content-between">
+                            <div className="card-body d-flex align-items-center justify-content-between p-0">
                                 {/* product image */}
                                 <img
                                     src={resolveImageUrl(item.img)}
                                     alt={item.name}
-                                    className="img-fluid rounded"
+                                    className="img-fluid rounded-start"
                                     style={{
                                         width: "80px",
                                         height: "80px",
@@ -90,8 +90,8 @@ export default function CartPage() {
                     ))}
 
                     {/* cart summary */}
-                    <div className="card mt-4">
-                        <div className="card-body d-flex justify-content-between align-items-center">
+                    <div className="mt-4">
+                        <div className="d-flex justify-content-between align-items-center">
                             <h5 className="mb-0">
                                 Total:{" "}
                                 <strong>
