@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { register } from "../services/authService";
 
@@ -9,6 +9,12 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (!error) return;
+        const id = setTimeout(() => setError(""), 5000); // 5 seconds
+        return () => clearTimeout(id);
+    }, [error]);
 
     async function handleSubmit(e) {
         e.preventDefault();
