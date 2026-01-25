@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -58,6 +59,14 @@ function App() {
                             element={
                                 <PageWrapper>
                                     <ProductDetail />
+                                </PageWrapper>
+                            }
+                        />
+                        <Route
+                            path="/login"
+                            element={
+                                <PageWrapper>
+                                    <Login />
                                 </PageWrapper>
                             }
                         />
