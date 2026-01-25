@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../services/authService";
 
 export default function Login() {
@@ -78,7 +78,8 @@ export default function Login() {
                     </form>
 
                     <p className="mt-3 text-center">
-                        Don't have an account? <a href="/register">Register</a>
+                        Don't have an account?{" "}
+                        <Link to="/register">Register</Link>
                     </p>
                 </div>
             </div>
