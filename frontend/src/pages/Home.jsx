@@ -18,9 +18,12 @@ export default function Home() {
                 >
                     Browse Inventory
                 </Link>
-                <button className="btn-home btn btn-outline-primary btn-lg hover-btn">
+                <Link
+                    className="btn-home btn btn-outline-primary btn-lg hover-btn"
+                    to="/register"
+                >
                     Create Account
-                </button>
+                </Link>
             </div>
             <Carousel />
         </div>

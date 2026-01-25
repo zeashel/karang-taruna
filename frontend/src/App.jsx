@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -35,7 +36,7 @@ function App() {
     return (
         <>
             <Navbar />
-            <div className="container py-lg-4 py-2">
+            <div className="container py-lg-4 py-3">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route
@@ -67,6 +68,14 @@ function App() {
                             element={
                                 <PageWrapper>
                                     <Login />
+                                </PageWrapper>
+                            }
+                        />
+                        <Route
+                            path="/register"
+                            element={
+                                <PageWrapper>
+                                    <Register />
                                 </PageWrapper>
                             }
                         />
