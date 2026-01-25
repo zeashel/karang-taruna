@@ -1,15 +1,30 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { login } from "../services/authService";
 import Alert from "../components/Alert";
 
 export default function Login() {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+
+    // If redirected from ProtectedRoute, show alert
+    useEffect(() => {
+        if (location.state?.alert) {
+            // Force a state update so Alert runs animation properly
+            setError("");
+            requestAnimationFrame(() => {
+                setError(location.state.alert);
+            });
+
+            // Remove the state so it doesn't re-trigger on refresh
+            navigate(location.pathname, { replace: true, state: {} });
+        }
+    }, [location, navigate]);
 
     async function handleSubmit(e) {
         e.preventDefault();
