@@ -17,13 +17,17 @@ router.post("/register", async (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-        return res.status(400).json({ message: "Username and password required" });
+        return res
+            .status(400)
+            .json({ message: "Username and password required" });
     }
 
     try {
         const existingUser = await User.findOne({ username });
         if (existingUser) {
-            return res.status(400).json({ message: "Username already taken" });
+            return res
+                .status(400)
+                .json({ message: "Username already taken" });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -37,8 +41,17 @@ router.post("/register", async (req, res) => {
 
         res.status(201).json({ message: "Registration success" });
     } catch (err) {
+        console.error("REGISTER ERROR:", err);
+
+        if (err.code === 11000) {
+            return res
+                .status(409)
+                .json({ message: "Username already taken" });
+        }
+
         res.status(500).json({ message: "Server error" });
     }
+
 });
 
 /**
@@ -71,6 +84,7 @@ router.post("/login", async (req, res) => {
 
         res.json({ token });
     } catch (err) {
+        console.error("REGISTER ERROR:", err);
         res.status(500).json({ message: "Server error" });
     }
 });

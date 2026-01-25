@@ -15,6 +15,16 @@ const Product = require("./models/Product");
 
 // MongoDB
 const connectDB = require("./db");
+const User = require("./models/User");
+
+(async () => {
+    try {
+        await User.init();
+        console.log("User indexes ensured");
+    } catch (err) {
+        console.error("Index init error:", err);
+    }
+})();
 connectDB().catch(console.error);
 
 // env
