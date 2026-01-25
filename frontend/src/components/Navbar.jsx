@@ -1,9 +1,23 @@
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { isLoggedIn, logout } from "../utils/authHelper";
+import { getCartCount } from "../services/cartService";
 
 function Navbar() {
     const navigate = useNavigate();
     const loggedIn = isLoggedIn();
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        setCartCount(getCartCount());
+
+        function syncCart() {
+            setCartCount(getCartCount());
+        }
+
+        window.addEventListener("cartUpdated", syncCart);
+        return () => window.removeEventListener("cartUpdated", syncCart);
+    }, []);
 
     function handleLogout() {
         logout();
@@ -83,12 +97,13 @@ function Navbar() {
                             <>
                                 <NavLink
                                     to="/cart"
-                                    className="btn btn-outline-primary me-2"
+                                    className="btn btn-outline-primary me-2 position-relative"
+                                    title="My Cart"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        width="20"
-                                        height="20"
+                                        width="1.5em"
+                                        height="1.5em"
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
@@ -105,6 +120,19 @@ function Navbar() {
                                         <circle cx="19" cy="21" r="1" />
                                         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                                     </svg>
+                                    {cartCount > 0 && (
+                                        <span
+                                            className="position-absolute top-0 start-0 translate-middle badge rounded-pill text-bg-light"
+                                            style={{
+                                                fontSize: "0.6rem",
+                                            }}
+                                        >
+                                            {cartCount}
+                                            <span class="visually-hidden">
+                                                items in cart
+                                            </span>
+                                        </span>
+                                    )}
                                 </NavLink>
                                 <button
                                     onClick={handleLogout}
