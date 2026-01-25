@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-secondary shadow mb-3 sticky-top z-100">
+        <nav className="navbar navbar-expand-sm bg-body-secondary shadow mb-3 sticky-top z-100">
             <div className="container-fluid">
                 <NavLink className="navbar-brand fw-bold" to="/">
                     <svg
@@ -44,7 +44,7 @@ function Navbar() {
                     className="collapse navbar-collapse"
                     id="navbarSupportedContent"
                 >
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav me-auto mb-2 mb-sm-0">
                         <li className="nav-item">
                             <NavLink
                                 to="/"
