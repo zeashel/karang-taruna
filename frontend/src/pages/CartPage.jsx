@@ -8,11 +8,11 @@ export default function CartPage() {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        setCart(getCart());
+        setCart(getCart()); // product.ATTR from ProductDetail.jsx
     }, []);
 
     const total = cart.reduce(
-        (sum, product) => sum + product.price * product.quantity,
+        (sum, product) => sum + product.priceDiscounted * product.quantity,
         0
     );
 
@@ -65,7 +65,8 @@ export default function CartPage() {
                                         <strong>
                                             Rp
                                             {(
-                                                product.price * product.quantity
+                                                product.priceDiscounted *
+                                                product.quantity
                                             ).toLocaleString("id-ID")}
                                         </strong>
                                     </div>
