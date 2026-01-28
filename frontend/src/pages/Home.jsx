@@ -1,9 +1,26 @@
 import { Link } from "react-router-dom";
+import { isLoggedIn } from "../utils/authHelper";
+import { useState } from "react";
+
 import Carousel from "../components/Carousel";
+import Alert from "../components/Alert";
 
 export default function Home() {
+    const [alertMessage, setAlertMessage] = useState("");
+
+    function loggedInAlert() {
+        setAlertMessage("You are already logged in.");
+    }
+
     return (
         <div className="text-center">
+            <Alert
+                message={alertMessage}
+                type="success"
+                duration={3000}
+                onClose={() => setAlertMessage("")}
+            />
+
             <h1 className="display-1 fw-bold text-decoration-underline link-underline-primary mb-2">
                 Recompiled.
             </h1>
@@ -18,12 +35,24 @@ export default function Home() {
                 >
                     Browse Inventory
                 </Link>
-                <Link
-                    className="btn-home btn btn-outline-primary btn-lg hover-btn"
-                    to="/register"
-                >
-                    Create Account
-                </Link>
+                {isLoggedIn() ? (
+                    // if user is logged in, disable button
+                    <button
+                        className="btn-home btn btn-outline-primary btn-lg hover-btn"
+                        aria-disabled="true"
+                        onClick={() => loggedInAlert()}
+                    >
+                        Create Account
+                    </button>
+                ) : (
+                    // if user is not logged in, enable button
+                    <Link
+                        className="btn-home btn btn-outline-primary btn-lg hover-btn"
+                        to="/register"
+                    >
+                        Create Account
+                    </Link>
+                )}
             </div>
             <Carousel />
         </div>
