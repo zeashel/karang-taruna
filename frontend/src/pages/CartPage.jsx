@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getCart, removeFromCart, clearCart } from "../services/cartService";
 import { resolveImageUrl } from "../utils/resolveImageUrl";
 
+import BackButton from "../components/BackButton";
+
 export default function CartPage() {
     const [cart, setCart] = useState([]);
 
@@ -18,6 +20,7 @@ export default function CartPage() {
 
     return (
         <div className="px-lg-5 mx-lg-5 px-1">
+            <BackButton />
             <h1 className="mb-4">My Cart</h1>
 
             {cart.length === 0 ? (
