@@ -69,7 +69,7 @@ app.post(
 
 // endpoint getProducts (get all products)
 app.get("/api/products", async (req, res) => {
-    const products = await Product.find();
+    const products = await Product.find().sort({ _id: 1 }); // oldest first
     res.json(products);
 });
 
