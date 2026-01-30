@@ -31,6 +31,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-sm bg-body-secondary shadow mb-3 sticky-top z-100">
             <div className="container-fluid">
+                {/* BRAND */}
                 <NavLink className="navbar-brand fw-bold" to="/">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +56,7 @@ function Navbar() {
                     Recompiled.
                 </NavLink>
 
+                {/* MOBILE MENU */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -67,6 +69,7 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+                {/* left collapse */}
                 <div
                     className="collapse navbar-collapse"
                     id="navbarSupportedContent"
@@ -95,8 +98,9 @@ function Navbar() {
                         </li>
                     </ul>
 
-                    {/* right-aligned buttons */}
+                    {/* right collapse */}
                     <div className="d-flex ms-auto">
+                        {/* CART */}
                         <NavLink
                             to="/cart"
                             className="btn btn-outline-primary me-2 position-relative"
@@ -137,6 +141,7 @@ function Navbar() {
                                 </span>
                             )}
                         </NavLink>
+                        {/* AUTH BUTTONS */}
                         {loggedIn ? (
                             <>
                                 <button
