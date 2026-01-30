@@ -56,7 +56,9 @@ export default function CartPage() {
 
                                 {/* product info */}
                                 <div className="flex-grow-1 ms-3">
-                                    <h6 className="mb-1">{product.name}</h6>
+                                    <Link to={`/products/${product.productId}`}>
+                                        <h6 className="mb-1">{product.name}</h6>
+                                    </Link>
                                     <small className="text-muted">
                                         Qty: {product.quantity}
                                     </small>
