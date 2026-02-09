@@ -62,6 +62,28 @@ export default function ProductDetail() {
             <h2>Rp{priceStr}</h2>
         );
 
+    const bookmarkSvg = (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{
+                margin: "0px",
+                marginBottom: "3px",
+                marginRight: "0.3em",
+            }}
+            className="lucide lucide-bookmark-icon lucide-bookmark"
+        >
+            <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
+        </svg>
+    );
+
     return (
         <div>
             <Alert
@@ -85,42 +107,20 @@ export default function ProductDetail() {
                             <button
                                 className="btn btn-primary btn-lg hover-btn"
                                 onClick={() => addToCartButton()}
-                                title="Add to Cart"
+                                title="Bookmark This Lesson"
                             >
-                                Add to Cart
+                                {bookmarkSvg}Bookmark
                             </button>
                         ) : (
-                            // if not logged in, direct to /login (/cart protected) with error message
+                            // if not logged in, direct to /login (/bookmarks protected) with error message
                             <Link
                                 className="btn btn-primary btn-lg hover-btn"
-                                to="/cart"
-                                title="Add to Cart"
+                                to="/bookmarks"
+                                title="Bookmark This Lesson"
                             >
-                                Add to Cart
+                                {bookmarkSvg}Bookmark
                             </Link>
                         )}
-                        <button
-                            className="btn btn-outline-primary btn-lg hover-btn"
-                            title="Add to Wishlist"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="square"
-                                strokeLinejoin="square"
-                                className="lucide lucide-heart-icon lucide-heart"
-                                style={{
-                                    marginBottom: "5px",
-                                }}
-                            >
-                                <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
-                            </svg>
-                        </button>
                         <button
                             className="btn btn-outline-primary btn-lg hover-btn"
                             title="Give Rating"

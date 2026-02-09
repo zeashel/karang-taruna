@@ -6,7 +6,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import CartPage from "./pages/CartPage";
+import Bookmarks from "./pages/Bookmarks";
 // components
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
@@ -84,10 +84,12 @@ function App() {
                             }
                         />
                         <Route
-                            path="/cart"
+                            path="/bookmarks"
                             element={
                                 <ProtectedRoute>
-                                    <CartPage />
+                                    <PageWrapper>
+                                        <Bookmarks />
+                                    </PageWrapper>
                                 </ProtectedRoute>
                             }
                         />

@@ -1,4 +1,4 @@
-// src/pages/CartPage.jsx
+// src/pages/Bookmarks.jsx
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCart, removeFromCart, clearCart } from "../services/cartService";
@@ -6,7 +6,7 @@ import { resolveImageUrl } from "../utils/resolveImageUrl";
 
 import BackButton from "../components/BackButton";
 
-export default function CartPage() {
+export default function Bookmarks() {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
@@ -21,16 +21,16 @@ export default function CartPage() {
     return (
         <div className="px-lg-5 mx-lg-5 px-1">
             <BackButton />
-            <h1 className="mb-4">My Cart</h1>
+            <h1 className="mb-4">My Bookmarks</h1>
 
             {cart.length === 0 ? (
                 <div className="card">
                     <p className="text-muted text-center h3 fw-light mt-5">
-                        Your cart is empty.
+                        You don't have any bookmarks.
                     </p>
                     <Link to="/products">
                         <p className="text-center h5 fw-light mb-5">
-                            Shop for Products
+                            Checkout Lessons Here.
                         </p>
                     </Link>
                 </div>
@@ -140,17 +140,7 @@ export default function CartPage() {
                                         setCart(getCart());
                                     }}
                                 >
-                                    Clear Cart
-                                </button>
-
-                                <button
-                                    className="btn btn-primary hover-btn"
-                                    onClick={() => {
-                                        // placeholder
-                                        alert("Checkout clicked (Demo)");
-                                    }}
-                                >
-                                    Checkout
+                                    Clear All Bookmarks
                                 </button>
                             </div>
                         </div>
