@@ -9,13 +9,13 @@ const tutorialSeed = [
         img: "/img/rak-kayu.jpg"
     },
     {
-        name: "Instalasi Saklar Lampu Tunggal",
+        name: "Instalasi Bohlam Lampu",
         type: "video",
         category: "Listrik",
-        desc: "Panduan memasang saklar lampu tunggal dengan aman.",
-        long_desc: "Video ini menjelaskan langkah-langkah instalasi saklar lampu tunggal sesuai standar keselamatan.",
+        desc: "Panduan memasang bohlam lampu tunggal dengan aman.",
+        long_desc: "Video ini menjelaskan langkah-langkah instalasi bohlam lampu tunggal sesuai standar keselamatan.",
         details: "Pastikan listrik dimatikan sebelum bekerja. Gunakan obeng dan tespen.",
-        img: "/img/saklar-lampu.jpg"
+        img: "/img/bohlam.jpg"
     },
     {
         name: "Mengecor Trotoar Sederhana",
