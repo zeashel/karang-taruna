@@ -15,7 +15,7 @@ app.use(
     })
 );
 
-const Product = require("./models/Product");
+const Tutorial = require("./models/Tutorial");
 
 // MongoDB
 const connectDB = require("./db");
@@ -41,25 +41,25 @@ const adminMiddleware = require("./middleware/adminMiddleware.js")
  * CRUD with RESTful API 
  * 
  * endpoints:
- * - POST /api/products
- * - GET /api/products
- * - GET /api/products/:id
- * - PUT /api/products/:id
- * - DELETE /api/products/:id
+ * - POST /api/tutorials
+ * - GET /api/tutorials
+ * - GET /api/tutorials/:id
+ * - PUT /api/tutorials/:id
+ * - DELETE /api/tutorials/:id
  */
 
 // CREATE (AUTH)
-// create/post new 1 product
+// create/post new 1 tutorial
 
 app.post(
-    "/api/products",
+    "/api/tutorials",
     authMiddleware,
     adminMiddleware,
     async (req, res) => {
         try {
-            const product = new Product(req.body);
-            const savedProduct = await product.save();
-            res.status(201).json(savedProduct);
+            const tutorial = new Tutorial(req.body);
+            const savedTutorial = await tutorial.save();
+            res.status(201).json(savedTutorial);
         } catch (error) {
             res.status(400).json({ message: error.message });
         }
@@ -67,65 +67,65 @@ app.post(
 
 // READ (NO AUTH NEEDED)
 
-// endpoint getProducts (get all products)
-app.get("/api/products", async (req, res) => {
-    const products = await Product.find().sort({ _id: 1 }); // oldest first
-    res.json(products);
+// endpoint getTutorials (get all tutorials)
+app.get("/api/tutorials", async (req, res) => {
+    const tutorials = await Tutorial.find().sort({ _id: 1 }); // oldest first
+    res.json(tutorials);
 });
 
-// endpoint getProductsById (get 1 product by their id)
-app.get("/api/products/:id", async (req, res) => {
+// endpoint getTutorialsById (get 1 tutorial by their id)
+app.get("/api/tutorials/:id", async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id);
-        if (!product) {
-            return res.status(404).json({ message: "Product not found" });
+        const tutorial = await Tutorial.findById(req.params.id);
+        if (!tutorial) {
+            return res.status(404).json({ message: "Tutorial not found" });
         }
-        res.json(product);
+        res.json(tutorial);
     } catch {
         res.status(400).json({ message: "Invalid ID" });
     }
 });
 
 // UPDATE (ADMIN AUTH)
-// put/update 1 product by their id
+// put/update 1 tutorial by their id
 
 app.put(
-    "/api/products/:id",
+    "/api/tutorials/:id",
     authMiddleware,
     adminMiddleware,
     async (req, res) => {
         try {
-            const updatedProduct = await Product.findByIdAndUpdate(
+            const updatedTutorial = await Tutorial.findByIdAndUpdate(
                 req.params.id,
                 req.body,
                 { new: true }
             );
 
-            if (!updatedProduct) {
-                return res.status(404).json({ message: "Product not found" });
+            if (!updatedTutorial) {
+                return res.status(404).json({ message: "Tutorial not found" });
             }
 
-            res.json(updatedProduct);
+            res.json(updatedTutorial);
         } catch {
             res.status(400).json({ message: "Invalid ID" });
         }
     });
 
 // DELETE (AUTH)
-// delete 1 product by their id
+// delete 1 tutorial by their id
 
-app.delete("/api/products/:id",
+app.delete("/api/tutorials/:id",
     authMiddleware,
     adminMiddleware,
     async (req, res) => {
         try {
-            const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+            const deletedTutorial = await Tutorial.findByIdAndDelete(req.params.id);
 
-            if (!deletedProduct) {
-                return res.status(404).json({ message: "Product not found" });
+            if (!deletedTutorial) {
+                return res.status(404).json({ message: "Tutorial not found" });
             }
 
-            res.json({ message: "Product deleted" });
+            res.json({ message: "Tutorial deleted" });
         } catch {
             res.status(400).json({ message: "Invalid ID" });
         }

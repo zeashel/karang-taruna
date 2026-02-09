@@ -1,14 +1,20 @@
 const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema(
+const tutorialSchema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: true,
         },
-        price: {
-            type: Number,
-            required: true,
+        type: {
+            type: String,
+            enum: ["article", "video"],
+            required: true
+        },
+        category: {
+            type: String,
+            enum: ["Kayu", "Listrik", "Bangunan", "Perbaikan Rumah", "Lainnya"],
+            default: "Lainnya"
         },
         desc: {
             type: String,
@@ -26,11 +32,11 @@ const productSchema = new mongoose.Schema(
             type: String,
             default: "/img/default.svg",
         },
-        discount: {
-            type: Number,
-            default: null,
+        createdAt: {
+            type: Date,
+            default: Date.now
         }
     }
 );
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = mongoose.model("Tutorial", tutorialSchema);

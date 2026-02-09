@@ -6,18 +6,18 @@
     // bootstraps breakpoints https://getbootstrap.com/docs/5.3/layout/breakpoints/
     // custom (very small devices)
     @media (min-width: 340px) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     // custom
     @media (min-width: 498px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
     // Large devices (desktops, 992px and up)
     @media (min-width: 992px) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     // X-Large devices (large desktops, 1200px and up)
@@ -27,6 +27,6 @@
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
