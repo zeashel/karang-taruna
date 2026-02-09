@@ -62,9 +62,11 @@ function App() {
                         <Route
                             path="/products/:id"
                             element={
-                                <PageWrapper>
-                                    <ProductDetail />
-                                </PageWrapper>
+                                <ProtectedRoute>
+                                    <PageWrapper>
+                                        <ProductDetail />
+                                    </PageWrapper>
+                                </ProtectedRoute>
                             }
                         />
                         <Route
