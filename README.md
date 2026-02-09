@@ -11,7 +11,7 @@
 -   Create `backend/.env`. Example content:
     ```env
     JWT_SECRET=examplekey
-    MONGO_URI=mongodb://127.0.0.1:27017/e-commerce-recompiled
+    MONGO_URI=mongodb://127.0.0.1:27017/karang-taruna
     CLIENT_URL=http://localhost:5173
     ```
 -   Run `pnpm run dev` in both `frontend/` and `backend/`

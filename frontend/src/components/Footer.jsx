@@ -41,7 +41,7 @@ function Footer() {
                     </svg>
                 </a>
                 <a
-                    href="https://github.com/zeashel/e-commerce-recompiled"
+                    href="https://github.com/zeashel/karang-taruna"
                     title="Source Code of this Web App"
                     alt="Source Code"
                 >
@@ -65,13 +65,6 @@ function Footer() {
             </p>
             <p className="text-muted text-smallest lh-sm mt-0">
                 <small>© Zahra A. S. 2026. All rights reserved.</small>
-            </p>
-            <p className="text-muted text-smallest lh-sm">
-                <small>
-                    Recompiled is a fictional brand created for demonstration
-                    purposes only. All products, pricing, and content shown on
-                    this site are not real and are used as placeholders.
-                </small>
             </p>
         </footer>
     );

@@ -21,9 +21,7 @@ export default function Home() {
                 onClose={() => setAlertMessage("")}
             />
 
-            <h1 className="display-1 fw-bold text-decoration-underline link-underline-primary mb-2">
-                Recompiled.
-            </h1>
+            <h1 className="display-3 mb-2">Digital Youth Desa Anggrek</h1>
             <p className="text-muted lead mb-4">
                 Retro technology, carefully{" "}
                 <span className=" text-body">recompiled</span> for today.
