@@ -73,3 +73,7 @@ html {
 .lh-xs {
     line-height: 0.9rem;
 }
+  
+.nav-item .nav-link.active {
+    color: var(--bs-primary);
+}
