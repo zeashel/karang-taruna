@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProductById } from "../services/productService";
+import { getTutorialById } from "../services/tutorialService";
 import { addToCart } from "../services/cartService";
 import { resolveImageUrl } from "../utils/resolveImageUrl";
 import { isLoggedIn } from "../utils/authHelper";
@@ -15,7 +15,7 @@ export default function TutorialDetail() {
     const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
-        getProductById(id).then((data) => setTutorial(data));
+        getTutorialById(id).then((data) => setTutorial(data));
     }, [id]);
 
     if (!tutorial) return <Loading />;

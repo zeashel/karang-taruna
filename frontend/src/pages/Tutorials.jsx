@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../services/productService";
+import { getTutorials } from "../services/tutorialService";
 import "../scss/product-grid.scss";
 import TutorialCard from "../components/TutorialCard";
 import Loading from "../components/Loading";
@@ -9,7 +9,7 @@ function Tutorials() {
 
     useEffect(() => {
         // useEffect: run this code after React renders
-        getProducts()
+        getTutorials()
             .then((data) => setTutorials(data))
             .catch((err) => console.error(err));
         console.log("fetched tutorial objects from API");
