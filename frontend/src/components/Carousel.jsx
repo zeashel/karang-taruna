@@ -31,21 +31,21 @@ function Carousel() {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img
-                        src="img/fernando-lavin-RxHCRDO0psE-unsplash.jpg"
+                        src="img/randy-fath-ymf4_9Y9S_A-unsplash.jpg"
                         className="d-block w-100"
                         alt="..."
                     />
                 </div>
                 <div className="carousel-item">
                     <img
-                        src="img/ilias-gainutdinov-UAytKe3j5lQ-unsplash.jpg"
+                        src="img/maxim-hopman-s4d_ESS0ylA-unsplash.jpg"
                         className="d-block w-100"
                         alt="..."
                     />
                 </div>
                 <div className="carousel-item">
                     <img
-                        src="img/ravi-palwe-Hmkc-4SVyg4-unsplash.jpg"
+                        src="img/rineshkumar-ghirao-UdDjFekHQuk-unsplash.jpg"
                         className="d-block w-100"
                         alt="..."
                     />

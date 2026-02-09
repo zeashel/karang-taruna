@@ -30,7 +30,8 @@ export default function Home() {
             </h1>
             <p className="text-muted small lead mb-4 mx-2">
                 <span className="text-body">Digital Youth Desa Anggrek,</span>{" "}
-                panduan bertukang praktis untuk pemuda Karang Taruna Anggrek.
+                platform digital panduan bertukang untuk pemuda Karang Taruna
+                Anggrek.
             </p>
             <div className="btn-home-parent d-flex justify-content-center align-items-center gap-2 mb-3 w-100">
                 <Link
