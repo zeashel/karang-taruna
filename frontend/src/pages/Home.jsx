@@ -21,10 +21,16 @@ export default function Home() {
                 onClose={() => setAlertMessage("")}
             />
 
-            <h1 className="display-3 mb-2">Digital Youth Desa Anggrek</h1>
-            <p className="text-muted lead mb-4">
-                Retro technology, carefully{" "}
-                <span className=" text-body">recompiled</span> for today.
+            <h1 className="display-1 mb-2 mt-2 font-monospace">
+                D.Y.
+                <span className="text-primary">
+                    D<span className="text-body">.</span>A
+                    <span className="text-body">.</span>
+                </span>
+            </h1>
+            <p className="text-muted small lead mb-4 mx-2">
+                <span className="text-body">Digital Youth Desa Anggrek.</span>{" "}
+                Panduan bertukang praktis untuk pemuda Karang Taruna Anggrek.
             </p>
             <div className="btn-home-parent d-flex justify-content-center align-items-center gap-2 mb-3 w-100">
                 <Link
