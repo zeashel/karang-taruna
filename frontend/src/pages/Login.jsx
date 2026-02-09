@@ -56,7 +56,7 @@ export default function Login() {
                 </div>
                 <div className="col-lg-5">
                     <h1 className="mb-4 text-center display-3 fw-normal">
-                        Welcome Back
+                        Login
                     </h1>
 
                     <Alert

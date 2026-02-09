@@ -21,7 +21,7 @@ export default function Home() {
                 onClose={() => setAlertMessage("")}
             />
 
-            <h1 className="display-1 mb-2 mt-2 font-monospace">
+            <h1 className="display-1 mb-2 mt-2 fw-bold">
                 D.Y.
                 <span className="text-primary">
                     D<span className="text-body">.</span>A
@@ -29,15 +29,15 @@ export default function Home() {
                 </span>
             </h1>
             <p className="text-muted small lead mb-4 mx-2">
-                <span className="text-body">Digital Youth Desa Anggrek.</span>{" "}
-                Panduan bertukang praktis untuk pemuda Karang Taruna Anggrek.
+                <span className="text-body">Digital Youth Desa Anggrek,</span>{" "}
+                panduan bertukang praktis untuk pemuda Karang Taruna Anggrek.
             </p>
             <div className="btn-home-parent d-flex justify-content-center align-items-center gap-2 mb-3 w-100">
                 <Link
                     className="btn-home btn btn-primary btn-lg hover-btn"
                     to="/products"
                 >
-                    Browse Inventory
+                    Lihat Tutorials
                 </Link>
                 {isLoggedIn() ? (
                     // if user is logged in, disable button
@@ -46,7 +46,7 @@ export default function Home() {
                         aria-disabled="true"
                         onClick={() => loggedInAlert()}
                     >
-                        Create Account
+                        Buat Akun
                     </button>
                 ) : (
                     // if user is not logged in, enable button
@@ -54,7 +54,7 @@ export default function Home() {
                         className="btn-home btn btn-outline-primary btn-lg hover-btn"
                         to="/register"
                     >
-                        Create Account
+                        Buat Akun
                     </Link>
                 )}
             </div>

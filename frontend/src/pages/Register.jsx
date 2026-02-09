@@ -41,7 +41,7 @@ export default function Register() {
                 </div>
                 <div className="col-lg-5">
                     <h1 className="mb-4 text-center display-3 fw-normal">
-                        Start Shopping
+                        Register
                     </h1>
 
                     <Alert
