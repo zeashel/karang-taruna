@@ -138,6 +138,11 @@ function Navbar() {
                                 Tutorials
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <button className="text-muted nav-link">
+                                About
+                            </button>
+                        </li>
                     </ul>
 
                     {/* right collapse */}
