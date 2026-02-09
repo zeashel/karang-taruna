@@ -81,17 +81,19 @@ function Navbar() {
             <div className="container-fluid">
                 {/* BRAND */}
                 <NavLink className="navbar-brand fw-bold" to="/">
-                    <Logo
-                        width="1.1em"
-                        height="1.1em"
-                        strokeWidth="1.5"
-                        className="text-primary"
-                        style={{
-                            marginInlineEnd: "0.25em",
-                            marginBottom: "0.2em",
-                        }}
-                    />
-                    DYDA.
+                    <span className=" text-primary">
+                        <Logo
+                            width="20em"
+                            height="20em"
+                            strokeWidth="1.5"
+                            className="text-primary"
+                            style={{
+                                marginRight: "0.25em",
+                                marginBottom: "0.25em",
+                            }}
+                        />
+                    </span>
+                    DYDA
                 </NavLink>
 
                 <div className="d-flex align-items-stretch">
