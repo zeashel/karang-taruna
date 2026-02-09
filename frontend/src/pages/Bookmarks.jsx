@@ -10,7 +10,7 @@ export default function Bookmarks() {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        setCart(getCart()); // product.ATTR from ProductDetail.jsx
+        setCart(getCart()); // product.ATTR from TutorialDetail.jsx
     }, []);
 
     const total = cart.reduce(
@@ -28,7 +28,7 @@ export default function Bookmarks() {
                     <p className="text-muted text-center h3 fw-light mt-5">
                         You don't have any bookmarks.
                     </p>
-                    <Link to="/products">
+                    <Link to="/tutorials">
                         <p className="text-center h5 fw-light mb-5">
                             Checkout Lessons Here.
                         </p>
@@ -56,7 +56,9 @@ export default function Bookmarks() {
 
                                 {/* product info */}
                                 <div className="flex-grow-1 ms-3">
-                                    <Link to={`/products/${product.productId}`}>
+                                    <Link
+                                        to={`/tutorials/${product.productId}`}
+                                    >
                                         <h6 className="mb-1">{product.name}</h6>
                                     </Link>
                                     <small className="text-muted">

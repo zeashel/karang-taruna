@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../services/productService";
 import "../scss/product-grid.scss";
-import ProductCard from "../components/ProductCard";
+import TutorialCard from "../components/TutorialCard";
 import Loading from "../components/Loading";
 
-function Products() {
+function Tutorials() {
     const [tutorials, setTutorials] = useState(null);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ function Products() {
 
             <div className="product-grid">
                 {tutorials.map((p) => (
-                    <ProductCard
+                    <TutorialCard
                         key={p._id} // react only prop
                         id={p._id}
                         name={p.name}
@@ -37,4 +37,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default Tutorials;

@@ -9,7 +9,7 @@ import BackButton from "../components/BackButton";
 import Alert from "../components/Alert";
 import Loading from "../components/Loading";
 
-export default function ProductDetail() {
+export default function TutorialDetail() {
     const { id } = useParams();
     const [tutorial, setTutorial] = useState(null);
     const [alertMessage, setAlertMessage] = useState("");

@@ -130,12 +130,12 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                to="/products"
+                                to="/tutorials"
                                 className={({ isActive }) =>
                                     `nav-link ${isActive ? "active" : ""}`
                                 }
                             >
-                                Products
+                                Tutorials
                             </NavLink>
                         </li>
                     </ul>

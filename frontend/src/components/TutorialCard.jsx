@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import "../scss/product-card.scss";
 import { resolveImageUrl } from "../utils/resolveImageUrl";
 
-function ProductCard({ id, name, desc, img, type }) {
+function TutorialCard({ id, name, desc, img, type }) {
     return (
-        <Link to={`/products/${id}`} className="card-link">
+        <Link to={`/tutorials/${id}`} className="card-link">
             <div className="card product-card h-100" id={id}>
                 <span
                     className="position-absolute badge rounded-pill bg-primary z-3 shadow"
@@ -31,4 +31,4 @@ function ProductCard({ id, name, desc, img, type }) {
     );
 }
 
-export default ProductCard;
+export default TutorialCard;

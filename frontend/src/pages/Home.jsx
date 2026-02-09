@@ -36,7 +36,7 @@ export default function Home() {
             <div className="btn-home-parent d-flex justify-content-center align-items-center gap-2 mb-3 w-100">
                 <Link
                     className="btn-home btn btn-primary btn-lg hover-btn"
-                    to="/products"
+                    to="/tutorials"
                 >
                     Lihat Tutorials
                 </Link>

@@ -2,8 +2,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 // pages
 import Home from "./pages/Home";
-import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
+import Tutorials from "./pages/Tutorials";
+import TutorialDetail from "./pages/TutorialDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Bookmarks from "./pages/Bookmarks";
@@ -52,19 +52,19 @@ function App() {
                             }
                         />
                         <Route
-                            path="/products"
+                            path="/tutorials"
                             element={
                                 <PageWrapper>
-                                    <Products />
+                                    <Tutorials />
                                 </PageWrapper>
                             }
                         />
                         <Route
-                            path="/products/:id"
+                            path="/tutorials/:id"
                             element={
                                 <ProtectedRoute>
                                     <PageWrapper>
-                                        <ProductDetail />
+                                        <TutorialDetail />
                                     </PageWrapper>
                                 </ProtectedRoute>
                             }

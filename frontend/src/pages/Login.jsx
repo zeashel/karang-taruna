@@ -34,7 +34,7 @@ export default function Login() {
 
         try {
             await login(username, password);
-            navigate("/products");
+            navigate("/tutorials");
         } catch (err) {
             setError(err.message || "Login failed");
         } finally {
