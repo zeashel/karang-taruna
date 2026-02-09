@@ -28,7 +28,7 @@ function Carousel() {
                 />
             </div>
 
-            <div className="carousel-inner">
+            <div className="carousel-inner rounded-3">
                 <div className="carousel-item active">
                     <img
                         src="img/randy-fath-ymf4_9Y9S_A-unsplash.jpg"
