@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { isLoggedIn, logout } from "../utils/authHelper";
 import { getCartCount } from "../services/cartService";
+import Logo from "./Logo";
 
 function Navbar() {
     const navigate = useNavigate();
@@ -80,26 +81,16 @@ function Navbar() {
             <div className="container-fluid">
                 {/* BRAND */}
                 <NavLink className="navbar-brand fw-bold" to="/">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1.25em"
-                        height="1.25em"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
+                    <Logo
+                        width="1.1em"
+                        height="1.1em"
                         strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide text-primary"
+                        className="text-primary"
                         style={{
                             marginInlineEnd: "0.25em",
-                            marginBottom: "0.15em",
+                            marginBottom: "0.2em",
                         }}
-                    >
-                        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-                        <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
-                        <path d="M7 3v4a1 1 0 0 0 1 1h7" />
-                    </svg>
+                    />
                     DYDA.
                 </NavLink>
 

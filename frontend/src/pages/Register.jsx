@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { register } from "../services/authService";
 import Alert from "../components/Alert";
+import Logo from "../components/Logo";
 
 export default function Register() {
     const navigate = useNavigate();
@@ -29,23 +30,14 @@ export default function Register() {
     return (
         <div className="container py-5">
             <div className="row justify-content-center align-items-center gap-5">
-                <div className="col-auto d-flex align-items-center mx-3 d-none d-lg-block">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                <div className="col-auto d-flex align-items-center mx-3 d-none d-lg-block text-primary">
+                    <Logo
                         width="300px"
                         height="300px"
-                        viewBox="2 2 20 20"
-                        fill="none"
+                        viewBox="1.5 1.9 21 21"
+                        strokeWidth="1"
                         stroke="currentColor"
-                        strokeWidth="1.25"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide text-primary"
-                    >
-                        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-                        <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
-                        <path d="M7 3v4a1 1 0 0 0 1 1h7" />
-                    </svg>
+                    />
                 </div>
                 <div className="col-lg-5">
                     <h1 className="mb-4 text-center display-3 fw-normal">
