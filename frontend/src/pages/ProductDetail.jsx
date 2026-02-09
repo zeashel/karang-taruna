@@ -11,56 +11,27 @@ import Loading from "../components/Loading";
 
 export default function ProductDetail() {
     const { id } = useParams();
-    const [product, setProduct] = useState(null);
+    const [tutorial, setTutorial] = useState(null);
     const [alertMessage, setAlertMessage] = useState("");
 
     useEffect(() => {
-        getProductById(id).then((data) => setProduct(data));
+        getProductById(id).then((data) => setTutorial(data));
     }, [id]);
 
-    if (!product) return <Loading />;
-
-    const priceStr = product.price.toLocaleString("id-ID");
-
-    // handle discounts
-    const discountPercent = product.discount ?? 0; // treats null/undefined as 0
-    const priceDiscounted = product.price * (1 - discountPercent / 100);
-    const priceDiscountedStr = priceDiscounted.toLocaleString("id-ID");
+    if (!tutorial) return <Loading />;
 
     function addToCartButton() {
         addToCart({
-            productId: product._id,
-            name: product.name,
-            price: product.price,
-            img: product.img,
-            discount: product.discount,
-            priceDiscounted: priceDiscounted,
+            productId: tutorial._id,
+            name: tutorial.name,
+            img: tutorial.img,
         });
         addToCartAlert();
     }
 
     function addToCartAlert() {
-        setAlertMessage(`${product.name} added to cart.`);
+        setAlertMessage(`Item added to bookmarks.`);
     }
-
-    const priceElem =
-        product.discount !== null && product.discount !== undefined ? (
-            // if discounted
-            <>
-                <h2 className="text-primary">Rp{priceDiscountedStr} </h2>
-                <p>
-                    <small className="alert alert-primary p-1">
-                        {product.discount}% OFF
-                    </small>{" "}
-                    <span className="text-muted opacity-50 text-decoration-line-through">
-                        Rp{priceStr}
-                    </span>
-                </p>
-            </>
-        ) : (
-            // if no discount
-            <h2>Rp{priceStr}</h2>
-        );
 
     const bookmarkSvg = (
         <svg
@@ -99,7 +70,7 @@ export default function ProductDetail() {
                 <div className="col-md-4">
                     <img
                         className="rounded img-fluid"
-                        src={resolveImageUrl(product.img)}
+                        src={resolveImageUrl(tutorial.img)}
                     />
                     <div className="d-flex gap-2 my-3 w-100">
                         {isLoggedIn() ? (
@@ -146,14 +117,13 @@ export default function ProductDetail() {
                     </div>
                 </div>
                 <div className="col-md-8">
-                    <h3 className="mb-0">{product.name}</h3>
-                    <p className="text-muted mb-3">{product.desc}</p>
-                    {priceElem}
+                    <h3 className="mb-0">{tutorial.name}</h3>
+                    <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
                     <h4>Description</h4>
-                    <p>{product.long_desc}</p>
+                    <p>{tutorial.long_desc}</p>
                     <h4 className="mt-3">Details</h4>
-                    <p>{product.details}</p>
+                    <p>{tutorial.details}</p>
                 </div>
             </div>
         </div>
