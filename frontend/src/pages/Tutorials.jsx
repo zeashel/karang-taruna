@@ -29,7 +29,7 @@ function Tutorials() {
         <div>
             <h1 className="mb-4">Tutorials</h1>
 
-            <div className="d-flex flex-row gap-3">
+            <div className="d-flex flex-column flex-sm-row gap-0 gap-sm-3">
                 <Sidebar activeCategory={category} onSelect={setCategory} />
 
                 <AnimatePresence mode="wait">

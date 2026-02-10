@@ -120,7 +120,7 @@ export default function TutorialDetail() {
                     </div>
                 </div>
                 <div className="col-md-8">
-                    <h3 className="mb-0">{tutorial.name}</h3>
+                    <h2 className="mb-0">{tutorial.name}</h2>
                     <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
                     <h4>Description</h4>
