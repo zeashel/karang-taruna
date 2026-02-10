@@ -24,6 +24,9 @@ export default function TutorialDetail() {
         addToCart({
             productId: tutorial._id,
             name: tutorial.name,
+            desc: tutorial.desc,
+            type: tutorial.type,
+            category: tutorial.category,
             img: tutorial.img,
         });
         addToCartAlert();

@@ -30,7 +30,7 @@ export default function Bookmarks() {
                     </p>
                     <Link to="/tutorials">
                         <p className="text-center h5 fw-light mb-5">
-                            Checkout Lessons Here.
+                            Check out tutorials.
                         </p>
                     </Link>
                 </div>
@@ -41,74 +41,37 @@ export default function Bookmarks() {
                             key={product.productId}
                             className="card mb-3 shadow-sm"
                         >
-                            <div className="card-body d-flex align-items-center justify-content-between p-0">
+                            <div className="card-body bookmark-card d-flex flex-column flex-md-row align-items-center justify-content-between p-0">
                                 {/* product image */}
                                 <img
                                     src={resolveImageUrl(product.img)}
                                     alt={product.name}
                                     className="img-fluid rounded-start"
-                                    style={{
-                                        width: "100px",
-                                        height: "100px",
-                                        objectFit: "cover",
-                                    }}
                                 />
 
                                 {/* product info */}
-                                <div className="flex-grow-1 ms-3">
+                                <div className="flex-grow-1 ms-md-3 text-center text-md-start">
                                     <Link
                                         to={`/tutorials/${product.productId}`}
                                     >
-                                        <h6 className="mb-1">{product.name}</h6>
+                                        <h6 className="mb-1 mt-2">
+                                            {product.name}
+                                        </h6>
                                     </Link>
-                                    <small className="text-muted">
-                                        Qty: {product.quantity}
-                                    </small>
-                                </div>
-
-                                {/* price */}
-                                <div className="text-end me-3">
-                                    <p className="lh-xs mb-1">
-                                        {product.discount !== null &&
-                                        product.discount !== undefined ? (
-                                            // if discounted
-                                            <>
-                                                <strong className="text-primary-emphasis">
-                                                    Rp
-                                                    {(
-                                                        product.priceDiscounted *
-                                                        product.quantity
-                                                    ).toLocaleString(
-                                                        "id-ID"
-                                                    )}{" "}
-                                                </strong>
-                                                <br />
-                                                <span className="text-smallest text-muted text-decoration-line-through">
-                                                    Rp
-                                                    {(
-                                                        product.price *
-                                                        product.quantity
-                                                    ).toLocaleString("id-ID")}
-                                                </span>
-                                            </>
-                                        ) : (
-                                            // if no discount
-                                            <strong className="lh-base">
-                                                Rp
-                                                {(
-                                                    product.priceDiscounted *
-                                                    product.quantity
-                                                ).toLocaleString("id-ID")}
-                                            </strong>
-                                        )}
-                                    </p>
-                                    {/* actions */}
                                     <div>
+                                        <span className="badge rounded-pill bg-primary me-2">
+                                            {product.category}
+                                        </span>
+                                        <span className="badge rounded-pill bg-primary">
+                                            {product.type}
+                                        </span>
+                                    </div>
+                                    <small className="text-muted">
+                                        {product.desc}
+                                    </small>
+                                    <div className="mt-2 d-flex justify-content-center justify-content-md-start">
                                         <button
-                                            className="btn btn-sm btn-outline-danger"
-                                            style={{
-                                                padding: "0.05rem 0.5rem",
-                                            }}
+                                            className="btn btn-sm btn-outline-danger mb-2"
                                             onClick={() => {
                                                 removeFromCart(
                                                     product.productId
@@ -127,13 +90,6 @@ export default function Bookmarks() {
                     {/* cart summary */}
                     <div className="mt-4">
                         <div className="d-flex justify-content-between align-items-center">
-                            <h5 className="mb-0">
-                                Total:{" "}
-                                <strong>
-                                    Rp{total.toLocaleString("id-ID")}
-                                </strong>
-                            </h5>
-
                             <div className="d-flex gap-2">
                                 <button
                                     className="btn btn-outline-secondary hover-btn"
