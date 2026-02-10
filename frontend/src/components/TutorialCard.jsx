@@ -10,7 +10,7 @@ function TutorialCard({ id, name, desc, img, category, type }) {
                     className="position-absolute badge rounded-pill bg-primary z-3 shadow"
                     style={{ top: "5px", right: "5px" }}
                 >
-                    {category}
+                    {type.toUpperCase()}
                 </span>
                 <div className="product-image-wrapper">
                     <img
@@ -21,11 +21,10 @@ function TutorialCard({ id, name, desc, img, category, type }) {
                 </div>
 
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
+                    <h5 className="card-title mb-1">{name}</h5>
+                    <p className="card-text small my-2">{`Category: ${category}`}</p>
                     <p className="card-text">
-                        <small className="text-muted">
-                            {`${desc} (${type})`}
-                        </small>
+                        <small className="text-muted">{desc}</small>
                     </p>
                 </div>
             </div>
