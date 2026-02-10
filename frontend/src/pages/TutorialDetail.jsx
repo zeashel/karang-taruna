@@ -71,7 +71,7 @@ export default function TutorialDetail() {
             <BackButton />
 
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-lg-4">
                     <img
                         className="rounded img-fluid"
                         src={resolveImageUrl(tutorial.img)}
@@ -120,7 +120,7 @@ export default function TutorialDetail() {
                         </button>
                     </div>
                 </div>
-                <div className="col-md-8">
+                <div className="col-lg-8">
                     <h2 className="mb-0">{tutorial.name}</h2>
                     <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
