@@ -34,7 +34,8 @@ function Tutorials() {
                             name={p.name}
                             desc={p.desc}
                             img={p.img}
-                            type={p.category}
+                            category={p.category}
+                            type={p.type}
                         />
                     ))}
                 </div>
