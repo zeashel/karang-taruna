@@ -128,7 +128,6 @@ export default function TutorialDetail() {
                         <>
                             <YoutubeEmbed
                                 youtubeId={tutorial.content} // if video, it will be a yt vid id
-                                thumbnail={resolveImageUrl(tutorial.img)}
                             />
                             <h4 className="mt-3">Details</h4>
                             <div
