@@ -12,10 +12,8 @@ export function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
     const existing = cart.find(p => p.productId === product.productId);
 
-    if (existing) {
-        existing.quantity += 1;
-    } else {
-        cart.push({ ...product, quantity: 1 });
+    if (!existing) {
+        cart.push({ ...product });
     }
 
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
