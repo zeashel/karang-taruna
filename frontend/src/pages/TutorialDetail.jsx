@@ -123,10 +123,13 @@ export default function TutorialDetail() {
                     <h2 className="mb-0">{tutorial.name}</h2>
                     <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
-                    <h4>Description</h4>
-                    <p>{tutorial.long_desc}</p>
-                    <h4 className="mt-3">Details</h4>
-                    <p>{tutorial.details}</p>
+                    <h3 className="mt-3">Details</h3>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: tutorial.details }}
+                    />
+                    <div
+                        dangerouslySetInnerHTML={{ __html: tutorial.long_desc }}
+                    />
                 </div>
             </div>
         </div>
