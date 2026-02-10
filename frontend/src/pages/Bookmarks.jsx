@@ -10,13 +10,8 @@ export default function Bookmarks() {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        setCart(getCart()); // product.ATTR from TutorialDetail.jsx
+        setCart(getCart()); // tutorial.ATTR from TutorialDetail.jsx
     }, []);
-
-    const total = cart.reduce(
-        (sum, product) => sum + product.priceDiscounted * product.quantity,
-        0
-    );
 
     return (
         <div className="px-lg-5 mx-lg-5 px-1">
@@ -36,45 +31,45 @@ export default function Bookmarks() {
                 </div>
             ) : (
                 <>
-                    {cart.map((product) => (
+                    {cart.map((tutorial) => (
                         <div
-                            key={product.productId}
+                            key={tutorial.tutorialId}
                             className="card mb-3 shadow-sm"
                         >
                             <div className="card-body bookmark-card d-flex flex-column flex-md-row align-items-left align-items-md-center justify-content-between p-0">
-                                {/* product image */}
+                                {/* tutorial image */}
                                 <img
-                                    src={resolveImageUrl(product.img)}
-                                    alt={product.name}
+                                    src={resolveImageUrl(tutorial.img)}
+                                    alt={tutorial.name}
                                     className="img-fluid rounded-start"
                                 />
 
-                                {/* product info */}
+                                {/* tutorial info */}
                                 <div className="flex-grow-1 ms-md-3 px-2">
                                     <Link
-                                        to={`/tutorials/${product.productId}`}
+                                        to={`/tutorials/${tutorial.tutorialId}`}
                                     >
                                         <h5 className="mb-1 mt-2">
-                                            {product.name}
+                                            {tutorial.name}
                                         </h5>
                                     </Link>
                                     <div>
                                         <span className="badge rounded-pill bg-primary me-2">
-                                            {product.category}
+                                            {tutorial.category}
                                         </span>
                                         <span className="badge rounded-pill bg-primary">
-                                            {product.type}
+                                            {tutorial.type}
                                         </span>
                                     </div>
                                     <small className="text-muted">
-                                        {product.desc}
+                                        {tutorial.desc}
                                     </small>
                                     <div className="mt-2 d-flex justify-content-end justify-content-md-start">
                                         <button
                                             className="btn btn-sm btn-outline-danger mb-2"
                                             onClick={() => {
                                                 removeFromCart(
-                                                    product.productId
+                                                    tutorial.tutorialId
                                                 );
                                                 setCart(getCart());
                                             }}
