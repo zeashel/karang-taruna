@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getTutorials } from "../services/tutorialService";
+import { motion, AnimatePresence } from "framer-motion";
 import "../scss/product-grid.scss";
 import TutorialCard from "../components/TutorialCard";
 import Loading from "../components/Loading";
@@ -31,19 +32,28 @@ function Tutorials() {
             <div className="d-flex flex-row gap-3">
                 <Sidebar activeCategory={category} onSelect={setCategory} />
 
-                <div className="product-grid">
-                    {filteredTutorials.map((p) => (
-                        <TutorialCard
-                            key={p._id}
-                            id={p._id}
-                            name={p.name}
-                            desc={p.desc}
-                            img={p.img}
-                            category={p.category}
-                            type={p.type}
-                        />
-                    ))}
-                </div>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={category}
+                        className="product-grid"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
+                        {filteredTutorials.map((p) => (
+                            <TutorialCard
+                                key={p._id}
+                                id={p._id}
+                                name={p.name}
+                                desc={p.desc}
+                                img={p.img}
+                                category={p.category}
+                                type={p.type}
+                            />
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </div>
     );
