@@ -17,6 +17,11 @@ function Tutorials() {
         console.log("fetched tutorial objects from API");
     }, []);
 
+    const filteredTutorials =
+        category === "All"
+            ? tutorials
+            : tutorials.filter((p) => p.category === category);
+
     if (!tutorials) return <Loading />;
 
     return (
@@ -27,9 +32,9 @@ function Tutorials() {
                 <Sidebar activeCategory={category} onSelect={setCategory} />
 
                 <div className="product-grid">
-                    {tutorials.map((p) => (
+                    {filteredTutorials.map((p) => (
                         <TutorialCard
-                            key={p._id} // react only prop
+                            key={p._id}
                             id={p._id}
                             name={p.name}
                             desc={p.desc}

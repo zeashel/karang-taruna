@@ -1,4 +1,11 @@
-const categories = ["All", "Technology", "Design", "Business", "Science"];
+const categories = [
+    "All",
+    "Kayu",
+    "Listrik",
+    "Bangunan",
+    "Perbaikan Rumah",
+    "Lainnya",
+];
 
 export default function Sidebar({ activeCategory, onSelect }) {
     return (
