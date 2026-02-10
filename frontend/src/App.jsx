@@ -7,6 +7,7 @@ import TutorialDetail from "./pages/TutorialDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Bookmarks from "./pages/Bookmarks";
+import About from "./pages/About";
 // components
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
@@ -67,6 +68,14 @@ function App() {
                                         <TutorialDetail />
                                     </PageWrapper>
                                 </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/about"
+                            element={
+                                <PageWrapper>
+                                    <About />
+                                </PageWrapper>
                             }
                         />
                         <Route

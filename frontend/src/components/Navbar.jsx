@@ -139,9 +139,14 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <button className="text-muted nav-link">
+                            <NavLink
+                                to="/about"
+                                className={({ isActive }) =>
+                                    `nav-link ${isActive ? "active" : ""}`
+                                }
+                            >
                                 About
-                            </button>
+                            </NavLink>
                         </li>
                     </ul>
 
