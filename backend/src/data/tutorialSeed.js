@@ -4,7 +4,7 @@ const tutorialSeed = [
         type: "article",
         category: "Kayu",
         desc: "Tutorial membuat rak dinding sederhana dari kayu bekas.",
-        long_desc: `
+        content: `
             <article>
                 <p>
                     Rak dinding merupakan solusi praktis untuk menambah ruang penyimpanan tanpa memakan banyak tempat.
@@ -51,12 +51,12 @@ const tutorialSeed = [
         img: "/img/rak-kayu.jpg"
     },
     {
-        name: "Instalasi Bohlam Lampu",
+        name: "Pemasangan Kabel di Fitting Lampu",
         type: "video",
         category: "Listrik",
-        desc: "Panduan memasang bohlam lampu tunggal dengan aman.",
-        long_desc: "Video ini menjelaskan langkah-langkah instalasi bohlam lampu tunggal sesuai standar keselamatan.",
-        details: "Pastikan listrik dimatikan sebelum bekerja. Gunakan obeng dan tespen.",
+        desc: "Video panduan pemasangan kabel di fitting lampu dengan aman untuk pemula.",
+        content: "R54ftIFOzuQ",
+        details: "Video ini menjelaskan langkah-langkah pemasangan kabel di fitting lampu dengan aman untuk pemula, sesuai standar keselamatan. Pastikan listrik dimatikan sebelum bekerja. Gunakan obeng dan tespen.",
         img: "/img/bohlam.jpg"
     },
     {
@@ -64,7 +64,7 @@ const tutorialSeed = [
         type: "article",
         category: "Bangunan",
         desc: "Langkah-langkah dasar mengecor lantai trotoar atau teras.",
-        long_desc: `
+        content: `
             <article>
                 <p>
                     Mengecor trotoar atau lantai teras membutuhkan ketelitian agar hasilnya kuat dan rata.
@@ -113,7 +113,7 @@ const tutorialSeed = [
         type: "article",
         category: "Perbaikan Rumah",
         desc: "Solusi mudah untuk pintu kayu yang sulit dibuka.",
-        long_desc: `
+        content: `
             <article>
                 <p>
                     Pintu kayu yang macet sering disebabkan oleh perubahan suhu, kelembapan, atau engsel yang bermasalah.
@@ -160,7 +160,7 @@ const tutorialSeed = [
         type: "article",
         category: "Kayu",
         desc: "Tutorial membuat meja belajar sederhana menggunakan kayu palet.",
-        long_desc: `
+        content: `
             <article>
                 <p>
                     Kayu palet bekas dapat dimanfaatkan menjadi furnitur yang berguna, salah satunya meja belajar.

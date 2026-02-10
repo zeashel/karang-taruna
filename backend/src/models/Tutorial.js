@@ -20,7 +20,7 @@ const tutorialSchema = new mongoose.Schema(
             type: String,
             default: "No description given.",
         },
-        long_desc: {
+        content: {
             type: String,
             default: "No description given.",
         },

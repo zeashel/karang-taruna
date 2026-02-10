@@ -125,20 +125,33 @@ export default function TutorialDetail() {
                     <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
                     {tutorial.type == "video" ? (
-                        <YoutubeEmbed
-                            youtubeId="dQw4w9WgXcQ"
-                            thumbnail={resolveImageUrl(tutorial.img)}
-                        />
+                        <>
+                            <YoutubeEmbed
+                                youtubeId={tutorial.content} // if video, it will be a yt vid id
+                                thumbnail={resolveImageUrl(tutorial.img)}
+                            />
+                            <h4 className="mt-3">Details</h4>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: tutorial.details,
+                                }}
+                            />
+                        </>
                     ) : (
-                        <></>
+                        <>
+                            <h3 className="mt-3">Details</h3>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: tutorial.details,
+                                }}
+                            />
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: tutorial.content,
+                                }}
+                            />
+                        </>
                     )}
-                    <h3 className="mt-3">Details</h3>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: tutorial.details }}
-                    />
-                    <div
-                        dangerouslySetInnerHTML={{ __html: tutorial.long_desc }}
-                    />
                 </div>
             </div>
         </div>
