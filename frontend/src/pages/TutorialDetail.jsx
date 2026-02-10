@@ -8,6 +8,7 @@ import { isLoggedIn } from "../utils/authHelper";
 import BackButton from "../components/BackButton";
 import Alert from "../components/Alert";
 import Loading from "../components/Loading";
+import YoutubeEmbed from "../components/YoutubeEmbed";
 
 export default function TutorialDetail() {
     const { id } = useParams();
@@ -123,6 +124,14 @@ export default function TutorialDetail() {
                     <h2 className="mb-0">{tutorial.name}</h2>
                     <p className="text-muted mb-3">{tutorial.desc}</p>
                     <hr />
+                    {tutorial.type == "video" ? (
+                        <YoutubeEmbed
+                            youtubeId="dQw4w9WgXcQ"
+                            thumbnail={resolveImageUrl(tutorial.img)}
+                        />
+                    ) : (
+                        <></>
+                    )}
                     <h3 className="mt-3">Details</h3>
                     <div
                         dangerouslySetInnerHTML={{ __html: tutorial.details }}
