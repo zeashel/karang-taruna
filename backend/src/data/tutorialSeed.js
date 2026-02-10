@@ -1,5 +1,14 @@
 const tutorialSeed = [
     {
+        name: "Cara Pasang Saklar Tunggal untuk 1 Lampu",
+        type: "video",
+        category: "Listrik",
+        desc: "Video panduan pemasangan saklar tunggal Broco untuk satu lampu, cocok untuk pemula.",
+        content: "Bhfccqo3umg",
+        details: "Video ini menjelaskan langkah-langkah pemasangan saklar tunggal untuk satu lampu menggunakan saklar Broco. Tutorial disusun untuk pemula dengan penjelasan dasar instalasi listrik rumah. Pastikan aliran listrik dimatikan sebelum bekerja. Gunakan obeng, tespen, dan isolasi kabel untuk keamanan.",
+        img: "/img/saklar.jpg"
+    },
+    {
         name: "Cara Membuat Rak Dinding dari Kayu Bekas",
         type: "article",
         category: "Kayu",
@@ -58,6 +67,15 @@ const tutorialSeed = [
         content: "R54ftIFOzuQ",
         details: "Video ini menjelaskan langkah-langkah pemasangan kabel di fitting lampu dengan aman untuk pemula, sesuai standar keselamatan. Pastikan listrik dimatikan sebelum bekerja. Gunakan obeng dan tespen.",
         img: "/img/bohlam.jpg"
+    },
+    {
+        name: "Cara Menyiku dan Memasang Keramik atau Granit Lantai",
+        type: "video",
+        category: "Bangunan",
+        desc: "Video tutorial menyiku dan memasang keramik atau granit lantai untuk pemula.",
+        content: "v7NPjIdIhW4",
+        details: "Video ini membahas teknik dasar menyiku dan memasang keramik atau granit lantai agar hasil pemasangan rapi dan lurus. Cocok untuk pemula yang ingin belajar pemasangan lantai secara mandiri. Gunakan waterpass dan benang sebagai panduan siku. Pastikan adukan semen memiliki konsistensi yang tepat.",
+        img: "/img/keramik.jpg"
     },
     {
         name: "Mengecor Trotoar Sederhana",
@@ -154,6 +172,15 @@ const tutorialSeed = [
             </ul>
         `,
         img: "/img/pintu.jpg"
+    },
+    {
+        name: "Cara Membuat Kusen Pintu Kamar Mandi dari Baja Ringan",
+        type: "video",
+        category: "Bangunan",
+        desc: "Video tutorial pembuatan kusen pintu kamar mandi menggunakan baja ringan.",
+        content: "FiO8jMZzXFI",
+        details: "Video ini menjelaskan proses pembuatan kusen pintu kamar mandi dari baja ringan, mulai dari pengukuran, pemotongan, hingga perakitan. Tutorial ini cocok untuk renovasi rumah dengan material yang tahan air dan anti rayap. Gunakan alat pelindung diri saat memotong baja ringan.",
+        img: "/img/kusen.jpg"
     },
     {
         name: "Membuat Meja Belajar Sederhana dari Kayu Palet",
