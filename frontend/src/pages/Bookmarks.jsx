@@ -41,7 +41,7 @@ export default function Bookmarks() {
                             key={product.productId}
                             className="card mb-3 shadow-sm"
                         >
-                            <div className="card-body bookmark-card d-flex flex-column flex-md-row align-items-center justify-content-between p-0">
+                            <div className="card-body bookmark-card d-flex flex-column flex-md-row align-items-left align-items-md-center justify-content-between p-0">
                                 {/* product image */}
                                 <img
                                     src={resolveImageUrl(product.img)}
@@ -50,13 +50,13 @@ export default function Bookmarks() {
                                 />
 
                                 {/* product info */}
-                                <div className="flex-grow-1 ms-md-3 text-center text-md-start">
+                                <div className="flex-grow-1 ms-md-3 px-2">
                                     <Link
                                         to={`/tutorials/${product.productId}`}
                                     >
-                                        <h6 className="mb-1 mt-2">
+                                        <h5 className="mb-1 mt-2">
                                             {product.name}
-                                        </h6>
+                                        </h5>
                                     </Link>
                                     <div>
                                         <span className="badge rounded-pill bg-primary me-2">
@@ -69,7 +69,7 @@ export default function Bookmarks() {
                                     <small className="text-muted">
                                         {product.desc}
                                     </small>
-                                    <div className="mt-2 d-flex justify-content-center justify-content-md-start">
+                                    <div className="mt-2 d-flex justify-content-end justify-content-md-start">
                                         <button
                                             className="btn btn-sm btn-outline-danger mb-2"
                                             onClick={() => {
