@@ -1,4 +1,7 @@
 // src/pages/Bookmarks.jsx
+// NOTE: cartService uses `productId`
+// in this app, productId === tutorial._id
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCart, removeFromCart, clearCart } from "../services/cartService";
@@ -33,7 +36,7 @@ export default function Bookmarks() {
                 <>
                     {cart.map((tutorial) => (
                         <div
-                            key={tutorial.tutorialId}
+                            key={tutorial.productId}
                             className="card mb-3 shadow-sm"
                         >
                             <div className="card-body bookmark-card d-flex flex-column flex-md-row align-items-left align-items-md-center justify-content-between p-0">
@@ -47,7 +50,7 @@ export default function Bookmarks() {
                                 {/* tutorial info */}
                                 <div className="flex-grow-1 ms-md-3 px-2">
                                     <Link
-                                        to={`/tutorials/${tutorial.tutorialId}`}
+                                        to={`/tutorials/${tutorial.productId}`}
                                     >
                                         <h5 className="mb-1 mt-2">
                                             {tutorial.name}
@@ -69,7 +72,7 @@ export default function Bookmarks() {
                                             className="btn btn-sm btn-outline-danger mb-2"
                                             onClick={() => {
                                                 removeFromCart(
-                                                    tutorial.tutorialId
+                                                    tutorial.productId
                                                 );
                                                 setCart(getCart());
                                             }}
