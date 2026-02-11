@@ -186,7 +186,7 @@ const tutorialSeed = [
     {
         name: "Memperbaiki Pintu Kayu yang Macet",
         type: "article",
-        category: "Perbaikan Rumah",
+        category: "Perbaikan",
         desc: "Solusi mudah untuk pintu kayu yang sulit dibuka.",
         content: `
             <article>

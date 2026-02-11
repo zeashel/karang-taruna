@@ -13,7 +13,7 @@ const tutorialSchema = new mongoose.Schema(
         },
         category: {
             type: String,
-            enum: ["Kayu", "Listrik", "Bangunan", "Perbaikan Rumah", "Lainnya"],
+            enum: ["Kayu", "Listrik", "Bangunan", "Perbaikan", "Lainnya"],
             default: "Lainnya"
         },
         desc: {

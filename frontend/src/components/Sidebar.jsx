@@ -3,7 +3,7 @@ const categories = [
     "Kayu",
     "Listrik",
     "Bangunan",
-    "Perbaikan Rumah",
+    "Perbaikan",
     "Lainnya",
 ];
 
