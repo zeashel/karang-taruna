@@ -78,6 +78,54 @@ const tutorialSeed = [
         img: "/img/keramik.jpg"
     },
     {
+        name: "Teknik Dasar Mengecat Permukaan Kayu dan Dinding",
+        type: "article",
+        category: "Lainnya",
+        desc: "Panduan dasar mengecat permukaan kayu dan dinding agar hasil rapi dan tahan lama.",
+        content: `
+            <article>
+                <p>
+                    Mengecat merupakan tahap finishing yang sangat berpengaruh pada tampilan akhir sebuah proyek.
+                    Dengan teknik yang tepat, hasil cat bisa terlihat rapi, rata, dan lebih awet.
+                    Artikel ini membahas langkah dasar mengecat untuk pemula.
+                </p>
+    
+                <h3>Langkah-langkah Mengecat</h3>
+                <ol>
+                    <li>
+                        <strong>Persiapan Permukaan</strong><br/>
+                        Bersihkan permukaan dari debu, minyak, atau sisa cat lama agar cat baru dapat menempel dengan baik.
+                    </li>
+                    <li>
+                        <strong>Pengamplasan</strong><br/>
+                        Amplas permukaan secara merata untuk menghasilkan tekstur yang halus.
+                    </li>
+                    <li>
+                        <strong>Aplikasi Cat Dasar</strong><br/>
+                        Gunakan cat dasar (primer) agar warna akhir lebih rata dan tahan lama.
+                    </li>
+                    <li>
+                        <strong>Pengecatan Utama</strong><br/>
+                        Aplikasikan cat secara searah menggunakan kuas atau roller.
+                    </li>
+                    <li>
+                        <strong>Pengeringan</strong><br/>
+                        Biarkan cat mengering sempurna sebelum digunakan atau disentuh.
+                    </li>
+                </ol>
+            </article>
+        `,
+        details: `
+            <ul>
+                <li><strong>Alat:</strong> kuas, roller, amplas</li>
+                <li><strong>Bahan:</strong> cat, thinner (jika diperlukan)</li>
+                <li><strong>Peringatan:</strong> Gunakan masker saat mengecat di ruang tertutup</li>
+                <li><strong>Tips:</strong> Lakukan pengecatan tipis berlapis untuk hasil maksimal</li>
+            </ul>
+        `,
+        img: "/img/cat.jpg"
+    },
+    {
         name: "Mengecor Trotoar Sederhana",
         type: "article",
         category: "Bangunan",
@@ -127,6 +175,15 @@ const tutorialSeed = [
         img: "/img/pengecoran.jpg"
     },
     {
+        name: "Cara Membuat Kusen Pintu Kamar Mandi dari Baja Ringan",
+        type: "video",
+        category: "Bangunan",
+        desc: "Video tutorial pembuatan kusen pintu kamar mandi menggunakan baja ringan.",
+        content: "FiO8jMZzXFI",
+        details: "Video ini menjelaskan proses pembuatan kusen pintu kamar mandi dari baja ringan, mulai dari pengukuran, pemotongan, hingga perakitan. Tutorial ini cocok untuk renovasi rumah dengan material yang tahan air dan anti rayap. Gunakan alat pelindung diri saat memotong baja ringan.",
+        img: "/img/kusen.jpg"
+    },
+    {
         name: "Memperbaiki Pintu Kayu yang Macet",
         type: "article",
         category: "Perbaikan Rumah",
@@ -174,13 +231,98 @@ const tutorialSeed = [
         img: "/img/pintu.jpg"
     },
     {
-        name: "Cara Membuat Kusen Pintu Kamar Mandi dari Baja Ringan",
-        type: "video",
-        category: "Bangunan",
-        desc: "Video tutorial pembuatan kusen pintu kamar mandi menggunakan baja ringan.",
-        content: "FiO8jMZzXFI",
-        details: "Video ini menjelaskan proses pembuatan kusen pintu kamar mandi dari baja ringan, mulai dari pengukuran, pemotongan, hingga perakitan. Tutorial ini cocok untuk renovasi rumah dengan material yang tahan air dan anti rayap. Gunakan alat pelindung diri saat memotong baja ringan.",
-        img: "/img/kusen.jpg"
+        name: "Cara Menghaluskan dan Mengasah Permukaan Kayu",
+        type: "article",
+        category: "Kayu",
+        desc: "Panduan dasar menghaluskan dan mengasah kayu sebelum proses finishing.",
+        content: `
+            <article>
+                <p>
+                    Proses pengasahan kayu bertujuan untuk menghasilkan permukaan yang halus dan siap difinishing.
+                    Teknik yang tepat akan membuat hasil kerja lebih rapi dan nyaman disentuh.
+                </p>
+    
+                <h3>Langkah-langkah Pengasahan</h3>
+                <ol>
+                    <li>
+                        <strong>Pemeriksaan Permukaan</strong><br/>
+                        Periksa bagian kayu yang kasar atau tidak rata.
+                    </li>
+                    <li>
+                        <strong>Pengamplasan Awal</strong><br/>
+                        Gunakan amplas kasar untuk meratakan permukaan kayu.
+                    </li>
+                    <li>
+                        <strong>Pengamplasan Lanjutan</strong><br/>
+                        Ganti dengan amplas lebih halus untuk hasil akhir yang rata.
+                    </li>
+                    <li>
+                        <strong>Pembersihan Debu</strong><br/>
+                        Bersihkan sisa serbuk kayu sebelum proses finishing.
+                    </li>
+                    <li>
+                        <strong>Pengecekan Akhir</strong><br/>
+                        Raba permukaan kayu untuk memastikan sudah halus.
+                    </li>
+                </ol>
+            </article>
+        `,
+        details: `
+            <ul>
+                <li><strong>Alat:</strong> amplas berbagai tingkat kekasaran</li>
+                <li><strong>Bahan:</strong> kayu</li>
+                <li><strong>Peringatan:</strong> Gunakan masker untuk menghindari debu kayu</li>
+                <li><strong>Tips:</strong> Amplas searah serat kayu agar hasil lebih rapi</li>
+            </ul>
+        `,
+        img: "/img/amplas.jpg"
+    },
+    {
+        name: "Teknik Dasar Menyolder Kabel dan Komponen Listrik",
+        type: "article",
+        category: "Listrik",
+        desc: "Panduan dasar menyolder kabel dan komponen elektronik untuk pemula.",
+        content: `
+            <article>
+                <p>
+                    Menyolder merupakan teknik dasar dalam pekerjaan listrik dan elektronik.
+                    Dengan penyolderan yang baik, sambungan kabel akan lebih kuat dan aman.
+                </p>
+    
+                <h3>Langkah-langkah Menyolder</h3>
+                <ol>
+                    <li>
+                        <strong>Persiapan Alat</strong><br/>
+                        Panaskan solder hingga mencapai suhu kerja.
+                    </li>
+                    <li>
+                        <strong>Persiapan Kabel</strong><br/>
+                        Kupas ujung kabel secukupnya sebelum disolder.
+                    </li>
+                    <li>
+                        <strong>Proses Penyolderan</strong><br/>
+                        Tempelkan timah solder ke sambungan kabel hingga meleleh dan menutup sambungan.
+                    </li>
+                    <li>
+                        <strong>Pendinginan</strong><br/>
+                        Biarkan timah mengeras secara alami tanpa digerakkan.
+                    </li>
+                    <li>
+                        <strong>Pemeriksaan Sambungan</strong><br/>
+                        Pastikan sambungan kuat dan tidak longgar.
+                    </li>
+                </ol>
+            </article>
+        `,
+        details: `
+            <ul>
+                <li><strong>Alat:</strong> solder listrik</li>
+                <li><strong>Bahan:</strong> timah solder, kabel</li>
+                <li><strong>Peringatan:</strong> Hindari menyentuh ujung solder yang panas</li>
+                <li><strong>Tips:</strong> Gunakan timah secukupnya agar sambungan rapi</li>
+            </ul>
+        `,
+        img: "/img/solder.jpg"
     },
     {
         name: "Membuat Meja Belajar Sederhana dari Kayu Palet",
@@ -228,6 +370,53 @@ const tutorialSeed = [
             </ul>
         `,
         img: "/img/kayu.jpg"
+    },
+    {
+        name: "Tips Perencanaan dan Kerja Sama dalam Proyek Pertukangan",
+        type: "article",
+        category: "Lainnya",
+        desc: "Panduan dasar perencanaan dan kerja sama tim agar proyek berjalan lancar.",
+        content: `
+            <article>
+                <p>
+                    Perencanaan yang baik dan kerja sama tim yang solid sangat menentukan keberhasilan sebuah proyek.
+                    Artikel ini membahas tips sederhana untuk mengatur pekerjaan dan membangun koordinasi yang efektif.
+                </p>
+    
+                <h3>Langkah-langkah Perencanaan</h3>
+                <ol>
+                    <li>
+                        <strong>Menentukan Tujuan</strong><br/>
+                        Tentukan hasil akhir proyek agar semua anggota tim memiliki arah yang sama.
+                    </li>
+                    <li>
+                        <strong>Pembagian Tugas</strong><br/>
+                        Bagi pekerjaan sesuai kemampuan masing-masing anggota.
+                    </li>
+                    <li>
+                        <strong>Penyusunan Jadwal</strong><br/>
+                        Buat jadwal kerja sederhana untuk menghindari keterlambatan.
+                    </li>
+                    <li>
+                        <strong>Komunikasi Rutin</strong><br/>
+                        Lakukan diskusi singkat untuk memantau progres pekerjaan.
+                    </li>
+                    <li>
+                        <strong>Evaluasi</strong><br/>
+                        Setelah proyek selesai, lakukan evaluasi untuk perbaikan ke depannya.
+                    </li>
+                </ol>
+            </article>
+        `,
+        details: `
+            <ul>
+                <li><strong>Persiapan:</strong> rencana kerja, daftar tugas</li>
+                <li><strong>Peralatan:</strong> alat tulis atau aplikasi catatan</li>
+                <li><strong>Peringatan:</strong> Hindari miskomunikasi antar anggota tim</li>
+                <li><strong>Tips:</strong> Selalu sepakati keputusan bersama sebelum bekerja</li>
+            </ul>
+        `,
+        img: "/img/planning.jpg"
     }
 ];
 
