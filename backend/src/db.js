@@ -1,29 +1,22 @@
+// src/db.js
 const mongoose = require("mongoose");
-const Tutorial = require("./models/Tutorial");
-const tutorialSeed = require("./data/tutorialSeed");
 
-let isConnected = false;
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) throw new Error("Please define MONGO_URI in env");
+
+let cached = global.mongoose;
+if (!cached) cached = global.mongoose = { conn: null, promise: null };
 
 async function connectDB() {
-    if (isConnected) {
-        return;
+    if (cached.conn) return cached.conn;
+
+    if (!cached.promise) {
+        const opts = { bufferCommands: false };
+        cached.promise = mongoose.connect(MONGO_URI, opts).then((mongoose) => mongoose);
     }
 
-    mongoose.set("autoIndex", true);
-
-    const db = await mongoose.connect(process.env.MONGO_URI);
-
-    isConnected = db.connections[0].readyState === 1;
-
-    console.log("MongoDB connected");
-
-    // only seed once per deployment instance
-    const count = await Tutorial.countDocuments();
-
-    if (count === 0) {
-        await Tutorial.insertMany(tutorialSeed);
-        console.log("Seed data inserted");
-    }
+    cached.conn = await cached.promise;
+    return cached.conn;
 }
 
 module.exports = connectDB;
