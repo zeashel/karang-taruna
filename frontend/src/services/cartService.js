@@ -34,5 +34,5 @@ export function clearCart() {
 
 export function getCartCount() {
     const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
-    return cart.reduce((sum, item) => sum + item.quantity, 0);
+    return cart.length;
 }
