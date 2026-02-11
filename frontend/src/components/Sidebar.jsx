@@ -14,7 +14,7 @@ export default function Sidebar({ activeCategory, onSelect }) {
             <div className="d-sm-none mb-3">
                 <div className="dropdown w-100">
                     <button
-                        className="btn btn-outline-secondary dropdown-toggle w-100 text-start text-truncate"
+                        className="btn btn-outline-primary dropdown-toggle w-100 text-start text-truncate"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -22,7 +22,7 @@ export default function Sidebar({ activeCategory, onSelect }) {
                         //     maxWidth: "100px",
                         // }}
                     >
-                        {activeCategory}
+                        {`Category: ${activeCategory}`}
                     </button>
 
                     <ul className="dropdown-menu w-100">
