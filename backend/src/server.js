@@ -7,11 +7,12 @@ require("dotenv").config();
 app.use(express.json()); // for POST/PUT
 
 const cors = require("cors");
-app.use(
-    cors({
-        origin: process.env.CLIENT_URL,
-    })
-);
+app.use(cors({
+    origin: process.env.CLIENT_URL, // frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors()); // allow preflight for all routes
 
 const Tutorial = require("./models/Tutorial");
 
