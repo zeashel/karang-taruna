@@ -4,8 +4,6 @@ const app = express();
 // env
 require("dotenv").config();
 
-const port = process.env.PORT || 8000;
-
 app.use(express.json()); // for POST/PUT
 
 const cors = require("cors");
@@ -142,6 +140,4 @@ app.use("/api/auth", authRoutes);
 // expose images
 app.use("/img", express.static("./public/img"));
 
-app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`);
-});
+module.exports = app;
