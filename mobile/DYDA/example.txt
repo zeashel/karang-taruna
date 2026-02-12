@@ -1,0 +1,47 @@
+DYDA/
+├─╴app/
+│  ├─╴(tabs)/
+│  │  ├─╴index.tsx
+│  │  ├─╴_layout.tsx
+│  │  └─╴explore.tsx
+│  ├─╴_layout.tsx
+│  └─╴modal.tsx
+├─╴app.json
+├─╴constants/
+│  └─╴theme.ts
+├─╴expo-env.d.ts
+├─╴README.md
+├─╴components/
+│  ├─╴themed-text.tsx
+│  ├─╴ui/
+│  │  ├─╴icon-symbol.ios.tsx
+│  │  ├─╴icon-symbol.tsx
+│  │  └─╴collapsible.tsx
+│  ├─╴hello-wave.tsx
+│  ├─╴parallax-scroll-view.tsx
+│  ├─╴themed-view.tsx
+│  ├─╴external-link.tsx
+│  └─╴haptic-tab.tsx
+├─╴package-lock.json
+├─╴package.json
+├─╴hooks/
+│  ├─╴use-color-scheme.web.ts
+│  ├─╴use-color-scheme.ts
+│  └─╴use-theme-color.ts
+├─╴scripts/
+│  └─╴reset-project.js
+├─╴example.txt
+├─╴tsconfig.json
+├─╴eslint.config.js
+└─╴assets/
+   └─╴images/
+      ├─╴icon.png
+      ├─╴partial-react-logo.png
+      ├─╴android-icon-background.png
+      ├─╴react-logo@2x.png
+      ├─╴react-logo@3x.png
+      ├─╴favicon.png
+      ├─╴android-icon-foreground.png
+      ├─╴react-logo.png
+      ├─╴android-icon-monochrome.png
+      └─╴splash-icon.png
