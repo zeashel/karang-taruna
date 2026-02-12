@@ -1,5 +1,5 @@
 {
-	"name": "karang-taruna-backend",
+	"name": "dyda-backend",
 	"dependencies": {
 		"bcryptjs": "^3.0.3",
 		"cors": "^2.8.5",
