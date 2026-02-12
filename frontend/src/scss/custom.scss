@@ -1,35 +1,49 @@
 // override variables BEFORE importing the rest
 
-/* AtkinsonHyperlegible font imports */
+/* GoogleSans font imports */
 @font-face {
-    font-family: 'AtkinsonHyperlegible';
-    src: url('/fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'AtkinsonHyperlegible';
-    src: url('/fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'AtkinsonHyperlegible';
-    src: url('/fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-SemiBold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'AtkinsonHyperlegible';
-    src: url('/fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-SemiBoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }
 
-$font-family-sans-serif: 'AtkinsonHyperlegible', 'Lexend', "monospace", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+$font-family-sans-serif: 'GoogleSans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $primary: #e55c50;
 $body-bg-dark: #161923;
 $body-secondary-bg-dark: #161a26;
