@@ -64,7 +64,10 @@ function Footer() {
                 </a>
             </p>
             <p className="text-muted text-smallest lh-sm mt-0">
-                <small>© Zahra A. S. 2026. All rights reserved.</small>
+                <small>
+                    <span className="font-neutral">©</span> Zahra A. S. 2026.
+                    All rights reserved.
+                </small>
             </p>
         </footer>
     );
