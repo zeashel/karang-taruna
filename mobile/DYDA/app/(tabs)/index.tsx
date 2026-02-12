@@ -1,16 +1,18 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { WebView } from "react-native-webview";
 
-export default function Index() {
+export default function HomeScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <WebView
+      style={styles.container}
+      source={{ uri: "https://dyda-karang-taruna.vercel.app" }}
+    />
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
