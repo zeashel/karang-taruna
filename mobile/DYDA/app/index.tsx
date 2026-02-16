@@ -2,9 +2,12 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   return (
+    <>
+    <StatusBar style="light" />
     <SafeAreaView style={styles.container} edges={["top"]}>
       <WebView
         originWhitelist={["*"]}
@@ -12,6 +15,7 @@ export default function HomeScreen() {
         style={styles.webview}
       />
     </SafeAreaView>
+    </>
   );
 }
 
